@@ -5,6 +5,6 @@
 
 <b><h2>How to use :</h2></b><br>
 1.用户版(healthSystem)和医生版App(doctorSystem)：在 js/common.js 修改serverName为服务器IP地址；用 <b>Hbuildery</b> 运行即可<br>
-2.后台管理系统(management):在 Application/index.php 修改 define("SITE_URL", "http://XXXX");为服务器IP地址；浏览器访问 Application/index.php 即可<br>
+2.后台管理系统(management):在 Application/index.php 修改 define("SITE_URL", "XXXX");为服务器IP地址；浏览器访问 Application/index.php 即可<br>
 
 
