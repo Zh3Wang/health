@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/heathfile.css"/>
+		<style type="text/css">
+			.mui-segmented-control .mui-control-item.mui-active{
+				background-color:#06BFAC ;
+			}
+			.mui-segmented-control .mui-control-item{
+				color: #06BFAC ;
+				border-color:#06BFAC ;
+				border-left:1px solid #06BFAC;
+			}
+			.mui-segmented-control{
+				border:1px solid #06BFAC;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav public-color">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">家族史</h1>
+		</header>
+		<div class="mui-content">				
+			<div id="family" class="family_history">			
+				<div style="padding: 5px 0px;">
+					<div id="segmentedControl" class="mui-segmented-control">
+						<a class="mui-control-item mui-active" href="#item1">父系氏族</a>
+						<a class="mui-control-item" href="#item2">母系氏族</a>	
+					</div>
+				</div>	
+				<div id="item1" class="mui-control-content mui-active">
+					<ul class="mui-table-view mui-table-view-chevron">
+						<li class="mui-table-view-cell mui-collapse mui-active">
+								暂无
+						</li>					
+					</ul>
+				</div>
+				<div id="item2" class="mui-control-content">
+					<ul class="mui-table-view mui-table-view-chevron">
+						<li class="mui-table-view-cell mui-collapse mui-active">
+							暂无
+						</li>					
+					</ul>
+					
+				</div>	
+				<div id="add" class="submit">
+					<span class="mui-btn mui-btn-success ">添加成员</span>
+				</div>	
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init()
+			mui.plusReady(function () {
+				var user_phone = plus.storage.getItem('user_phone');
+			    mui.get('http://' + serverName + '/health/management/Application/index.php/Connector/Health/getFamily',{
+						user_phone:user_phone
+					},function(data){
+						//console.log(JSON.stringify(data));
+						var item1 = document.getElementById("item1");
+						var item2 = document.getElementById("item2");
+						var f = '';
+						var m = '';
+						if(data.result == 0){
+							plus.nativeUI.toast("还未添加家族史信息");
+							f += '<ul class="mui-table-view mui-table-view-chevron"><li class="mui-table-view-cell mui-media">暂无';
+							f += '</li></ul>';
+							item1.innerHTML = f;
+							item2.innerHTML = f;
+						}
+						for(var i=0;i<data.length;i++){
+							if(data[i].clan == "父系"){
+									f += '<ul class="mui-table-view mui-table-view-chevron">';
+									f += '<li class="mui-table-view-cell mui-collapse mui-active">';
+									f += '<a class="mui-navigate-right">';
+									f += '<p class="headline">与本人关系：<span>'+data[i].relation+'</span><span class="mui-pull-right detial">详情</span></p>';
+									f += '</a>';
+									f += '<ul class="mui-table-view mui-table-view-chevron other_info_res">';
+									f += '<li class="mui-table-view-cell"><p>所患疾病：</p><span>'+data[i].sick+'</span></li>';
+									f += '<li class="mui-table-view-cell"><p><button Fid="'+data[i].id+'" id="edit_health" type="button" class="mui-btn mui-btn-success mui-btn-outlined edit_health">修改病史</button></p></li>';
+									f += '</ul></li></ul>';
+									item1.innerHTML = f;
+								
+							}else if(data[i].clan == "母系"){
+									m += '<ul class="mui-table-view mui-table-view-chevron">';
+									m += '<li class="mui-table-view-cell mui-collapse mui-active">';
+									m += '<a class="mui-navigate-right">';
+									m += '<p class="headline">与本人关系：<span>'+data[i].relation+'</span><span class="mui-pull-right detial">详情</span></p>';
+									m += '</a>';
+									m += '<ul class="mui-table-view mui-table-view-chevron other_info_res">';
+									m += '<li class="mui-table-view-cell"><p>所患疾病：</p><span>'+data[i].sick+'</span></li>';
+									m += '<li class="mui-table-view-cell"><p><button Fid="'+data[i].id+'" id="edit_health" type="button" class="mui-btn mui-btn-success mui-btn-outlined edit_health">修改病史</button></p></li>';
+									m += '</ul></li></ul>';
+									item2.innerHTML = m;
+							}
+						}
+					},'json'
+				);
+				
+				document.getElementById("add").addEventListener('tap',function(e){
+					mui.openWindow({
+							url: 'Family_add.html',
+							id: 'Family_add',
+							show: {
+								aniShow: 'pop-in'
+							},
+							waiting: {
+								autoShow: false
+							}
+						});
+				});
+				
+				mui('#family').on('tap','.edit_health',function(e){
+					var Fid = this.getAttribute('Fid');
+					mui.openWindow({
+							url: 'Family_edit.html',
+							id: 'Family_edit',
+							extras:{
+								Fid:Fid
+							},
+							show: {
+								aniShow: 'pop-in'
+							},
+							waiting: {
+								autoShow: false
+							}
+						});
+				});
+			})
+			
+		</script>
+	</body>
+
+</html>

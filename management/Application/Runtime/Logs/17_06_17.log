@@ -1,0 +1,109 @@
+[ 2017-06-17T13:11:10+08:00 ] 183.40.2.214 /health/management/Application/index.php/Connector/User/getKnowList
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000345s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000030s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000041s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000090s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000030s ]
+SQL: SHOW COLUMNS FROM `health_know` [ RunTime:0.001670s ]
+SQL: SELECT * FROM `health_know` ORDER BY know_see desc LIMIT 5   [ RunTime:0.000474s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000040s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000093s ]
+
+[ 2017-06-17T13:11:12+08:00 ] 183.40.2.214 /health/management/Application/index.php/Connector/Hos/getHotHos
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000356s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000030s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000040s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000089s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000031s ]
+SQL: SHOW COLUMNS FROM `hospital_info` [ RunTime:0.001684s ]
+SQL: SELECT * FROM `hospital_info` ORDER BY hos_attention desc LIMIT 4   [ RunTime:0.000368s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000084s ]
+
+[ 2017-06-17T13:11:13+08:00 ] 183.40.2.214 /health/management/Application/index.php/Connector/Doc/getHotDoc
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000387s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000043s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000095s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000038s ]
+NOTIC: [2048] Declaration of Admin\Model\DoctorInfoModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) C:\phpStudy\WWW\health\management\Application\Admin\Model\DoctorInfoModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.001784s ]
+SQL: SELECT a.*,b.hos_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id ORDER BY doc_attention desc LIMIT 8   [ RunTime:0.000575s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000090s ]
+
+[ 2017-06-17T13:11:40+08:00 ] 183.40.2.214 /health/management/Application/index.php/Connector/Sick/getSick
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000349s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000041s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000091s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000030s ]
+SQL: SHOW COLUMNS FROM `department_info` [ RunTime:0.001566s ]
+SQL: SHOW COLUMNS FROM `illness` [ RunTime:0.001340s ]
+SQL: SELECT * FROM `department_info` WHERE ( `parent_id` = 0 )  [ RunTime:0.000247s ]
+SQL: SELECT * FROM `department_info`  [ RunTime:0.000184s ]
+SQL: SELECT * FROM `department_info`  [ RunTime:0.000180s ]
+SQL: SELECT * FROM `department_info`  [ RunTime:0.000172s ]
+SQL: SELECT * FROM `department_info`  [ RunTime:0.000171s ]
+SQL: SELECT * FROM `department_info`  [ RunTime:0.000170s ]
+SQL: SELECT * FROM `department_info`  [ RunTime:0.000171s ]
+SQL: SELECT * FROM `illness` WHERE ( `two_depa_id` = '6' )  [ RunTime:0.000187s ]
+SQL: SELECT * FROM `illness` WHERE ( `two_depa_id` = '7' )  [ RunTime:0.000177s ]
+SQL: SELECT * FROM `illness` WHERE ( `two_depa_id` = '19' )  [ RunTime:0.000164s ]
+SQL: SELECT * FROM `illness` WHERE ( `two_depa_id` = '8' )  [ RunTime:0.000168s ]
+SQL: SELECT * FROM `illness` WHERE ( `two_depa_id` = '9' )  [ RunTime:0.000167s ]
+SQL: SELECT * FROM `illness` WHERE ( `two_depa_id` = '16' )  [ RunTime:0.000166s ]
+SQL: SELECT * FROM `illness` WHERE ( `two_depa_id` = '11' )  [ RunTime:0.000168s ]
+SQL: SELECT * FROM `illness` WHERE ( `two_depa_id` = '13' )  [ RunTime:0.000167s ]
+SQL: SELECT * FROM `illness` WHERE ( `two_depa_id` = '12' )  [ RunTime:0.000166s ]
+SQL: SELECT * FROM `illness` WHERE ( `two_depa_id` = '14' )  [ RunTime:0.000168s ]
+SQL: SELECT * FROM `illness` WHERE ( `two_depa_id` = '10' )  [ RunTime:0.000167s ]
+SQL: SELECT * FROM `illness` WHERE ( `two_depa_id` = '15' )  [ RunTime:0.000165s ]
+SQL: SELECT * FROM `illness` WHERE ( `two_depa_id` = '18' )  [ RunTime:0.000160s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000081s ]
+
+[ 2017-06-17T13:11:54+08:00 ] 183.40.2.214 /health/management/Application/index.php/Connector/Sick/getSickDetail?illnessID=null
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000351s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000041s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000090s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000030s ]
+SQL: SHOW COLUMNS FROM `illness` [ RunTime:0.001529s ]
+SQL: SELECT * FROM `illness` WHERE ( `illness_id` = 0 ) LIMIT 1   [ RunTime:0.000244s ]
+NOTIC: [8] Undefined index: two_depa_id C:\phpStudy\WWW\health\management\Application\Connector\Controller\SickController.class.php 第 44 行.
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.001449s ]
+SQL: SELECT a.*,b.hos_name,c.dep_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( a.depa_id = null )  [ RunTime:0.000375s ]
+SQL: SHOW COLUMNS FROM `hospital_info` [ RunTime:0.001323s ]
+SQL: SELECT a.hos_id,a.hos_name,a.hos_address,a.hos_level,a.hos_navigate_img FROM hospital_info a LEFT JOIN hos_dep b on a.hos_id = b.hos_id WHERE ( b.dep_id = null )  [ RunTime:0.000314s ]
+NOTIC: [8] Undefined offset: 1 C:\phpStudy\WWW\health\management\Application\Connector\Controller\SickController.class.php 第 73 行.
+SQL: SHOW COLUMNS FROM `health_know` [ RunTime:0.001234s ]
+SQL: SELECT * FROM `health_know`  [ RunTime:0.000363s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000091s ]
+

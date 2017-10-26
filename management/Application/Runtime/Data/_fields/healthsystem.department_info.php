@@ -1,0 +1,1 @@
+a:5:{i:0;s:6:"dep_id";i:1;s:8:"dep_name";i:2;s:9:"parent_id";s:3:"_pk";s:6:"dep_id";s:5:"_type";a:3:{s:6:"dep_id";s:12:"mediumint(9)";s:8:"dep_name";s:11:"varchar(30)";s:9:"parent_id";s:12:"mediumint(9)";}}

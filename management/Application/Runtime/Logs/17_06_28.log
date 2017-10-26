@@ -1,0 +1,281 @@
+[ 2017-06-28T01:04:33+08:00 ] 119.124.164.136 /health/management/Application/index.php/Connector/User/login
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000369s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000041s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000091s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000036s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.002219s ]
+SQL: SELECT * FROM `user_info` WHERE ( `user_phone` = '15768650568' ) AND ( `user_token` = 'c3d4f04ef90934373b7cf340c93c52a9' ) LIMIT 1   [ RunTime:0.000430s ]
+SQL: UPDATE `user_info` SET `user_token`='8c3ba814fa281fc11862cef482711e9f',`token_time`='2017-06-28 01:04:33',`login_time`='2017-06-28 01:04:33' WHERE ( `user_phone` = '15768650568' ) AND ( `user_token` = 'c3d4f04ef90934373b7cf340c93c52a9' ) [ RunTime:0.003944s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000041s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000092s ]
+
+[ 2017-06-28T01:04:34+08:00 ] 119.124.164.136 /health/management/Application/index.php/Connector/User/getKnowList
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000350s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000045s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000090s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000043s ]
+SQL: SHOW COLUMNS FROM `health_know` [ RunTime:0.001647s ]
+SQL: SELECT * FROM `health_know` ORDER BY know_see desc LIMIT 5   [ RunTime:0.000454s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000094s ]
+
+[ 2017-06-28T01:04:35+08:00 ] 119.124.164.136 /health/management/Application/index.php/Connector/Hos/getHotHos
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000359s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000030s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000094s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000199s ]
+SQL: SHOW COLUMNS FROM `hospital_info` [ RunTime:0.001766s ]
+SQL: SELECT * FROM `hospital_info` ORDER BY hos_attention desc LIMIT 4   [ RunTime:0.000343s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000085s ]
+
+[ 2017-06-28T01:04:36+08:00 ] 119.124.164.136 /health/management/Application/index.php/Connector/Doc/getHotDoc
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000361s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000044s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000096s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000039s ]
+NOTIC: [2048] Declaration of Admin\Model\DoctorInfoModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) C:\phpstudy\WWW\health\management\Application\Admin\Model\DoctorInfoModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.001898s ]
+SQL: SELECT a.*,b.hos_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id ORDER BY doc_attention desc LIMIT 8   [ RunTime:0.000597s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000049s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000104s ]
+
+[ 2017-06-28T01:04:37+08:00 ] 119.124.164.136 /health/management/Application/index.php/Connector/User/getuserInfo
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000339s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000038s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000085s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000044s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.002154s ]
+SQL: SELECT * FROM `user_info` WHERE ( `user_phone` = '15768650568' ) LIMIT 1   [ RunTime:0.000384s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000083s ]
+
+[ 2017-06-28T01:04:44+08:00 ] 119.124.164.136 /health/management/Application/index.php/Connector/Health/getDiary?user_phone=15768650568&drug_date=2017628
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000402s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000040s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000063s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000135s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000030s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.001697s ]
+SQL: SELECT `user_id` FROM `user_info` WHERE ( `user_phone` = '15768650568' ) LIMIT 1   [ RunTime:0.000233s ]
+SQL: SHOW COLUMNS FROM `drug_diary` [ RunTime:0.002747s ]
+SQL: SELECT * FROM `drug_diary` WHERE ( `user_id` = '1' ) AND ( `drug_date` = '2017628' )  [ RunTime:0.000249s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000078s ]
+
+[ 2017-06-28T01:05:15+08:00 ] 119.124.164.136 /health/management/Application/index.php/Connector/Health/getHisRelaName?user_phone=15768650568
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000342s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000038s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000089s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000029s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.001782s ]
+SQL: SELECT `user_id` FROM `user_info` WHERE ( `user_phone` = '15768650568' ) LIMIT 1   [ RunTime:0.000256s ]
+SQL: SHOW COLUMNS FROM `relative_info` [ RunTime:0.001421s ]
+SQL: SELECT `relative_id`,`relative_name` FROM `relative_info` WHERE ( `user_id` = '1' )  [ RunTime:0.000234s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000089s ]
+
+[ 2017-06-28T01:05:16+08:00 ] 119.124.164.136 /health/management/Application/index.php/Connector/Health/getHisVis?relative_id=0&user_phone=15768650568
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000315s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000039s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000083s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000045s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.001824s ]
+SQL: SELECT `user_id` FROM `user_info` WHERE ( `user_phone` = '15768650568' ) LIMIT 1   [ RunTime:0.000250s ]
+SQL: SHOW COLUMNS FROM `see_doc_case` [ RunTime:0.001536s ]
+SQL: SELECT a.* FROM see_doc_case a WHERE ( a.relative_id = '0' ) AND ( a.user_id = '1' )  [ RunTime:0.000309s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000081s ]
+
+[ 2017-06-28T01:05:17+08:00 ] 119.124.164.136 /health/management/Application/index.php/Connector/Health/get_online_vis
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000343s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000050s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000037s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000085s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000048s ]
+SQL: SHOW COLUMNS FROM `zixun` [ RunTime:0.001743s ]
+SQL: SELECT a.*,b.hos_name,c.dep_name,d.doc_name FROM zixun a LEFT JOIN doctor_info d on d.doc_phone=a.doc_phone LEFT JOIN hospital_info b on b.hos_id=d.hos_id LEFT JOIN department_info c on c.dep_id=d.depa_id WHERE ( a.user_phone = '15768650568' ) ORDER BY id desc  [ RunTime:0.001503s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000087s ]
+
+[ 2017-06-28T01:05:18+08:00 ] 119.124.164.136 /health/management/Application/index.php/Connector/Chufang/get_user_chufang
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000308s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000027s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000036s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000081s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000065s ]
+SQL: SHOW COLUMNS FROM `chufang` [ RunTime:0.001799s ]
+NOTIC: [8] Use of undefined constant eq - assumed 'eq' C:\phpstudy\WWW\health\management\Application\Connector\Controller\ChufangController.class.php 第 95 行.
+SQL: SELECT * FROM `chufang` WHERE ( `user_phone` = '15768650568' ) ORDER BY cf_id desc  [ RunTime:0.000285s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000083s ]
+
+[ 2017-06-28T01:05:30+08:00 ] 119.124.164.136 /health/management/Application/index.php/Connector/Health/getHisDetail?seecase_id=8
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000329s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000041s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000086s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000031s ]
+SQL: SHOW COLUMNS FROM `see_doc_case` [ RunTime:0.001754s ]
+SQL: SELECT a.* FROM see_doc_case a WHERE ( a.seecase_id = '8' ) LIMIT 1   [ RunTime:0.000310s ]
+SQL: SHOW COLUMNS FROM `page_img` [ RunTime:0.001358s ]
+SQL: SELECT * FROM `page_img` WHERE ( `seecase_id` = '8' )  [ RunTime:0.000197s ]
+SQL: SHOW COLUMNS FROM `check_img` [ RunTime:0.001313s ]
+SQL: SELECT * FROM `check_img` WHERE ( `seecase_id` = '8' )  [ RunTime:0.000189s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000083s ]
+
+[ 2017-06-28T01:05:37+08:00 ] 119.124.164.136 /health/management/Application/index.php/Connector/Health/getHisDetail?seecase_id=8
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000346s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000040s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000089s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+SQL: SHOW COLUMNS FROM `see_doc_case` [ RunTime:0.001814s ]
+SQL: SELECT a.* FROM see_doc_case a WHERE ( a.seecase_id = '8' ) LIMIT 1   [ RunTime:0.000348s ]
+SQL: SHOW COLUMNS FROM `page_img` [ RunTime:0.001227s ]
+SQL: SELECT * FROM `page_img` WHERE ( `seecase_id` = '8' )  [ RunTime:0.000200s ]
+SQL: SHOW COLUMNS FROM `check_img` [ RunTime:0.001217s ]
+SQL: SELECT * FROM `check_img` WHERE ( `seecase_id` = '8' )  [ RunTime:0.000194s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000085s ]
+
+[ 2017-06-28T01:05:42+08:00 ] 119.124.164.136 /health/management/Application/index.php/Connector/health/getHisDetail?seecase_id=8
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000316s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000030s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000041s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000088s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000031s ]
+SQL: SHOW COLUMNS FROM `see_doc_case` [ RunTime:0.001748s ]
+SQL: SELECT a.* FROM see_doc_case a WHERE ( a.seecase_id = '8' ) LIMIT 1   [ RunTime:0.000411s ]
+SQL: SHOW COLUMNS FROM `page_img` [ RunTime:0.001300s ]
+SQL: SELECT * FROM `page_img` WHERE ( `seecase_id` = '8' )  [ RunTime:0.000218s ]
+SQL: SHOW COLUMNS FROM `check_img` [ RunTime:0.001241s ]
+SQL: SELECT * FROM `check_img` WHERE ( `seecase_id` = '8' )  [ RunTime:0.000197s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000081s ]
+
+[ 2017-06-28T01:06:18+08:00 ] 119.124.164.136 /health/management/Application/index.php/Connector/health/uploadHisEdit
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000324s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000039s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000088s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000031s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.001870s ]
+SQL: SELECT `user_id` FROM `user_info` WHERE ( `user_phone` = '15768650568' ) LIMIT 1   [ RunTime:0.000216s ]
+SQL: SHOW COLUMNS FROM `see_doc_case` [ RunTime:0.001417s ]
+SQL: UPDATE `see_doc_case` SET `seecase_doc`='按时',`seecase_hos`='阿斯达所多',`seecase_depa`='阿萨德',`seecase_info`='21323',`seecase_sgs`='萨达啊',`seecase_time`='03/17/1994',`page_info`='撒大声地',`check_info`='阿萨德',`user_id`=1,`time`='2017-06-28 01:06:18' WHERE ( `seecase_id` = 8 ) [ RunTime:0.002393s ]
+SQL: SHOW COLUMNS FROM `page_img` [ RunTime:0.001339s ]
+SQL: SHOW COLUMNS FROM `check_img` [ RunTime:0.001289s ]
+NOTIC: [8] Use of undefined constant IS_FILES - assumed 'IS_FILES' C:\phpstudy\WWW\health\management\Application\Connector\Controller\HealthController.class.php 第 203 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given C:\phpstudy\WWW\health\management\ThinkPHP\Library\Think\Upload.class.php 第 167 行.
+SQL: SELECT `page_img_path` FROM `page_img` WHERE ( `seecase_id` = '8' ) LIMIT 1   [ RunTime:0.000221s ]
+NOTIC: [2] unlink(./Public/Uploads/pageImg/2017-04-16/58f2d17d6f19c.jpg): No such file or directory C:\phpstudy\WWW\health\management\Application\Common\Common\function.php 第 41 行.
+SQL: DELETE FROM `page_img` WHERE ( `seecase_id` = '8' ) [ RunTime:0.001904s ]
+SQL: INSERT INTO `page_img` (`seecase_id`,`page_img_path`,`time`) VALUES (8,'pageImg/2017-06-28/5952908a3d266.jpg','2017-06-28 01:06:18') [ RunTime:0.001700s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given C:\phpstudy\WWW\health\management\ThinkPHP\Library\Think\Upload.class.php 第 167 行.
+SQL: SELECT `check_img_path` FROM `check_img` WHERE ( `seecase_id` = '8' ) LIMIT 1   [ RunTime:0.000177s ]
+NOTIC: [2] unlink(./Public/Uploads/checkImg/2017-04-16/58f2d17d93cb9.jpg): No such file or directory C:\phpstudy\WWW\health\management\Application\Common\Common\function.php 第 41 行.
+SQL: DELETE FROM `check_img` WHERE ( `seecase_id` = '8' ) [ RunTime:0.001726s ]
+SQL: INSERT INTO `check_img` (`seecase_id`,`check_img_path`,`time`) VALUES (8,'checkImg/2017-06-28/5952908a3f243.jpg','2017-06-28 01:06:18') [ RunTime:0.001821s ]
+NOTIC: [8] Use of undefined constant fasle - assumed 'fasle' C:\phpstudy\WWW\health\management\Application\Connector\Controller\HealthController.class.php 第 261 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000083s ]
+
+[ 2017-06-28T01:06:20+08:00 ] 119.124.164.136 /health/management/Application/index.php/Connector/Health/getHisDetail?seecase_id=8
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000422s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000092s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000030s ]
+SQL: SHOW COLUMNS FROM `see_doc_case` [ RunTime:0.001622s ]
+SQL: SELECT a.* FROM see_doc_case a WHERE ( a.seecase_id = '8' ) LIMIT 1   [ RunTime:0.000305s ]
+SQL: SHOW COLUMNS FROM `page_img` [ RunTime:0.001262s ]
+SQL: SELECT * FROM `page_img` WHERE ( `seecase_id` = '8' )  [ RunTime:0.000191s ]
+SQL: SHOW COLUMNS FROM `check_img` [ RunTime:0.001215s ]
+SQL: SELECT * FROM `check_img` WHERE ( `seecase_id` = '8' )  [ RunTime:0.000191s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000083s ]
+

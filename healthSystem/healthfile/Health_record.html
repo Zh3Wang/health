@@ -1,0 +1,256 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/mui.calendar.css">
+		<link rel="stylesheet" type="text/css" href="../css/heathfile.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/iconfont_health_record.css"/>
+		
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav public-color">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">健康记录</h1>
+		</header>
+		<div class="mui-content">
+			<div class="health_record">
+				<div class="head-color">
+					<div id="look_year" class="look_year">
+						<h4 id="info_year" class="">
+							
+						</h4>
+						
+					</div>		           
+					<h1 id="info_day" class=""></h1>		           
+				    </div>
+				    
+				</div>
+				
+				
+			 	<p class="box">
+			 		--今日健康记录--
+					
+			 	</p>
+			 	<ul class="mui-table-view">
+			 	        <li id="health_height" class="mui-table-view-cell">
+			 	            <a class="mui-navigate">
+			 	               	<span class="mui-icon iconfont icon-shengao ul_t1"></span>
+			 	               	身高:
+			 	               	<span id="info_height">
+			 	               		暂无
+			 	               	</span>
+			 	            </a>
+			 	        </li>
+			 	        <li id="health_weight" class="mui-table-view-cell">
+			 	            <a class="mui-navigate">
+			 	                <span class="mui-icon iconfont icon-ccgl-chengzhongsaomiao-5 ul_t2"></span>
+			 	                	体重:
+			 	                <span id="info_weight">
+			 	               		暂无
+			 	               	</span>
+			 	            </a>
+			 	        </li>
+			 	        <li id="health_vision" class="mui-table-view-cell">
+			 	            <a class="mui-navigate">
+			 	                <span class="mui-icon iconfont icon-shiliceping ul_t3"></span>
+			 	                
+			 	                	视力:
+			 	                <span id="info_vision">
+			 	               		暂无
+			 	               	</span>
+			 	            </a>
+			 	        </li>
+			 	          <li id="health_glucose" class="mui-table-view-cell">
+			 	            <a class="mui-navigate">
+			 	                 <span class="mui-icon iconfont icon-xueya ul_t4"></span>
+			 	                 	血糖:
+			 	                <span id="info_glucose">
+			 	               		暂无
+			 	               	</span>
+			 	            </a>
+			 	        </li>
+			 	          <li id="health_blood" class="mui-table-view-cell">
+			 	            <a class="mui-navigate">
+			 	                 <span class="mui-icon iconfont icon-iconxt ul_t5"></span>
+			 	                 	血压:
+			 	                 <span id="info_blood">
+			 	               		暂无
+			 	               	</span>
+			 	            </a>
+			 	        </li>
+			 	          <li id="health_heart" class="mui-table-view-cell">
+			 	            <a class="mui-navigate">
+			 	                 <span class="mui-icon iconfont icon-icon ul_t6"></span>
+			 	                	心率: 
+			 	                <span id="info_heart">
+			 	               		暂无
+			 	               	</span>
+			 	                 
+			 	            </a>
+			 	        </li>
+			 	        
+			 	    </ul>
+			 	
+				<div class="submit" id="add">
+					<span class="mui-btn mui-btn-success ">
+					编辑记录
+					</span>
+				</div>
+			</div>
+				
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script type="text/javascript" charset="utf-8">
+			 //mui初始化
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+			mui.plusReady(function () {
+			var user_phone = plus.storage.getItem("user_phone");
+			var info_year = document.getElementById("info_year");
+			var info_day = document.getElementById("info_day");
+			var d = new Date();
+			var time = d.getFullYear()+""+(d.getMonth()+1)+""+d.getDate();
+			var day = d.getDay();
+					switch(day){
+                case 1:
+                    day="一";
+                    break;
+                case 2:
+                    day="二";
+                    break;
+                case 3:
+                    day="三";
+                    break;
+                case 4:
+                    day="四";
+                    break;
+                case 5:
+                    day="五";
+                    break;
+                case 6:
+                    day="六";
+                    break;
+                case 0:
+                    day="天";
+                    break;
+                
+            }
+            info_year.innerHTML = d.getFullYear() + '<span class="mui-icon mui-icon-arrowdown"></span>';
+			info_day.innerHTML =(d.getMonth() + 1) + '月' + d.getDate()+'日'+ '星期'+day;
+			document.getElementById("look_year").addEventListener('tap', function() {
+				var dDate = new Date();				
+				var minDate = new Date();
+				minDate.setFullYear(1900, 1, 1);
+				var maxDate = new Date();
+				maxDate.setFullYear(2017, 8, 31);
+				
+				plus.nativeUI.pickDate(function(e) {
+					var d = e.date;
+					var day = d.getDay();
+					
+					switch(day){
+		                case 1:
+		                    day="一";
+		                    break;
+		                case 2:
+		                    day="二";
+		                    break;
+		                case 3:
+		                    day="三";
+		                    break;
+		                case 4:
+		                    day="四";
+		                    break;
+		                case 5:
+		                    day="五";
+		                    break;
+		                case 6:
+		                    day="六";
+		                    break;
+		                case 0:
+		                    day="天";
+		                    break;
+		                
+		            }
+					info_year.innerHTML = d.getFullYear() + '<span class="mui-icon mui-icon-arrowdown"></span>';
+					info_day.innerHTML =(d.getMonth() + 1) + '月' + d.getDate()+'日'+ '星期'+day;
+					time = d.getFullYear()+""+(d.getMonth()+1)+""+d.getDate();
+					//查出指定日期的健康记录
+				    mui.get('http://' + serverName + '/health/management/Application/index.php/Connector/Health/getRecord',{
+				    		user_phone:user_phone,
+				    		date:d.getFullYear()+""+(d.getMonth()+1)+""+d.getDate()
+				    	},function(data){
+				    		if(data.result==0){
+				    			plus.nativeUI.toast("当日尚未添加健康记录");
+				    			document.getElementById("info_height").innerHTML = '暂无';
+					    		document.getElementById("info_weight").innerHTML = '暂无';
+					    		document.getElementById("info_vision").innerHTML = '暂无';
+					    		document.getElementById("info_glucose").innerHTML = '暂无';
+					    		document.getElementById("info_blood").innerHTML = '暂无';
+					    		document.getElementById("info_heart").innerHTML = '暂无';
+				    			return false;
+				    		}else{
+				    			document.getElementById("info_height").innerHTML = data.height;
+					    		document.getElementById("info_weight").innerHTML = data.weight;
+					    		document.getElementById("info_vision").innerHTML = data.vision;
+					    		document.getElementById("info_glucose").innerHTML = data.bloglu;
+					    		document.getElementById("info_blood").innerHTML = data.blopre;
+					    		document.getElementById("info_heart").innerHTML = data.heart;
+				    		}
+				    		
+				    	},'json'
+				    );
+
+				}, function(e) {
+					mui.toast("您没有选择日期");
+				}, {
+					    title: '请选择日期',
+				        date: dDate,
+				        minDate: minDate,
+				        maxDate: maxDate
+				});
+			});
+			//查出当天的健康记录
+			 mui.get('http://' + serverName + '/health/management/Application/index.php/Connector/Health/getRecord',{
+				    		user_phone:user_phone,
+				    		date:d.getFullYear()+""+(d.getMonth()+1)+""+d.getDate()
+				    	},function(data){
+				    		if(data.result==0){
+				    			plus.nativeUI.toast("今日尚未添加健康记录");
+				    			return false;
+				    		}else{
+				    			document.getElementById("info_height").innerHTML = data.height;
+					    		document.getElementById("info_weight").innerHTML = data.weight;
+					    		document.getElementById("info_vision").innerHTML = data.vision;
+					    		document.getElementById("info_glucose").innerHTML = data.bloglu;
+					    		document.getElementById("info_blood").innerHTML = data.blopre;
+					    		document.getElementById("info_heart").innerHTML = data.heart;
+				    		}
+				    		
+				    	},'json' );
+			 //编辑健康记录
+			document.getElementById("add").addEventListener('tap',function(e){
+				 //console.log(time);
+				//console.log(d.getFullYear()+""+(d.getMonth()+1)+""+d.getDate());
+				mui.openWindow({
+					url:'Health_record_edit.html',
+					id:'Health_record_edit',
+					extras:{
+						time:time
+					}
+				});
+			});
+		});
+	</script>
+	</body>
+
+</html>

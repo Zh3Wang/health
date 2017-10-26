@@ -1,0 +1,2518 @@
+[ 2017-09-06T11:16:32+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/User/login
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000356s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000030s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000054s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000121s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000037s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.001857s ]
+SQL: SELECT * FROM `user_info` WHERE ( `user_phone` = '15768650568' ) AND ( `user_token` = '42d62c82b01ab31f2ac3d716dd852758' ) LIMIT 1   [ RunTime:0.000450s ]
+SQL: UPDATE `user_info` SET `user_token`='fb8e6d3371bdc89fc9ccb8b46a0d8c5e',`token_time`='2017-09-06 11:16:32',`login_time`='2017-09-06 11:16:32' WHERE ( `user_phone` = '15768650568' ) AND ( `user_token` = '42d62c82b01ab31f2ac3d716dd852758' ) [ RunTime:0.003543s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000041s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000091s ]
+
+[ 2017-09-06T11:16:35+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Hos/getHotHos
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000368s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000126s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000191s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000029s ]
+SQL: SHOW COLUMNS FROM `hospital_info` [ RunTime:0.001830s ]
+SQL: SELECT * FROM `hospital_info` ORDER BY hos_attention desc LIMIT 4   [ RunTime:0.000468s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000055s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000140s ]
+
+[ 2017-09-06T11:16:35+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Doc/getHotDoc
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000345s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000030s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000041s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000088s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000030s ]
+NOTIC: [2048] Declaration of Admin\Model\DoctorInfoModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) C:\phpstudy\WWW\health\management\Application\Admin\Model\DoctorInfoModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.001926s ]
+SQL: SELECT a.*,b.hos_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id ORDER BY doc_R desc LIMIT 8   [ RunTime:0.000649s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000087s ]
+
+[ 2017-09-06T11:16:37+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/User/getuserInfo
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000352s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000096s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000030s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.001782s ]
+SQL: SELECT * FROM `user_info` WHERE ( `user_phone` = '15768650568' ) LIMIT 1   [ RunTime:0.000442s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000044s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000118s ]
+
+[ 2017-09-06T11:16:50+08:00 ] 113.81.17.72 /health/management/application/index.php/Connector/Search/searchdoc
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000336s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000064s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000043s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000093s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000042s ]
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.002403s ]
+SQL: SELECT a.*,b.hos_name,c.dep_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( a.doc_name LIKE '%人%' )  [ RunTime:0.000846s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000088s ]
+
+[ 2017-09-06T11:16:50+08:00 ] 113.81.17.72 /health/management/application/index.php/Connector/Search/searchdep
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000403s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000059s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000130s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000040s ]
+SQL: SHOW COLUMNS FROM `department_info` [ RunTime:0.001452s ]
+SQL: SELECT a.*,b.*,c.* FROM department_info a LEFT JOIN doctor_info c on a.dep_id=c.depa_id LEFT JOIN hospital_info b on b.hos_id=c.hos_id WHERE ( a.dep_name LIKE '%人%' )  [ RunTime:0.000527s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000057s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000135s ]
+
+[ 2017-09-06T11:16:50+08:00 ] 113.81.17.72 /health/management/application/index.php/Connector/Search/searchhos
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000358s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000091s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000066s ]
+SQL: SHOW COLUMNS FROM `hospital_info` [ RunTime:0.001697s ]
+SQL: SELECT a.hos_id,c.dep_name FROM hospital_info a LEFT JOIN hos_dep b on a.hos_id=b.hos_id LEFT JOIN department_info c on b.dep_id=c.dep_id WHERE ( a.hos_name LIKE '%人%' ) AND ( b.hot = 1 )  [ RunTime:0.000620s ]
+SQL: SELECT * FROM `hospital_info` WHERE ( `hos_name` LIKE '%人%' )  [ RunTime:0.000331s ]
+NOTIC: [8] Undefined offset: 65 C:\phpstudy\WWW\health\management\Application\Connector\Controller\SearchController.class.php 第 39 行.
+NOTIC: [8] Undefined offset: 75 C:\phpstudy\WWW\health\management\Application\Connector\Controller\SearchController.class.php 第 39 行.
+NOTIC: [8] Undefined offset: 76 C:\phpstudy\WWW\health\management\Application\Connector\Controller\SearchController.class.php 第 39 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000087s ]
+
+[ 2017-09-06T11:16:50+08:00 ] 113.81.17.72 /health/management/application/index.php/Connector/Search/search_illness
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000447s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000032s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000039s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000093s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000045s ]
+SQL: SHOW COLUMNS FROM `department_info` [ RunTime:0.001473s ]
+SQL: SELECT a.*,b.*,c.* FROM department_info a LEFT JOIN doctor_info c on a.dep_id=c.depa_id LEFT JOIN hospital_info b on b.hos_id=c.hos_id WHERE ( c.doc_especial LIKE '%人%' )  [ RunTime:0.000854s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000058s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000141s ]
+
+[ 2017-09-06T11:17:04+08:00 ] 113.81.17.72 /health/management/application/index.php/Connector/Search/search_illness
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000487s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000037s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000088s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000029s ]
+SQL: SHOW COLUMNS FROM `department_info` [ RunTime:0.001493s ]
+SQL: SELECT a.*,b.*,c.* FROM department_info a LEFT JOIN doctor_info c on a.dep_id=c.depa_id LEFT JOIN hospital_info b on b.hos_id=c.hos_id WHERE ( c.doc_especial LIKE '%人%' )  [ RunTime:0.000741s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000105s ]
+
+[ 2017-09-06T11:17:06+08:00 ] 113.81.17.72 /health/management/application/index.php/Connector/Search/searchhos
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000355s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000039s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000087s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000031s ]
+SQL: SHOW COLUMNS FROM `hospital_info` [ RunTime:0.001651s ]
+SQL: SELECT a.hos_id,c.dep_name FROM hospital_info a LEFT JOIN hos_dep b on a.hos_id=b.hos_id LEFT JOIN department_info c on b.dep_id=c.dep_id WHERE ( a.hos_name LIKE '%人%' ) AND ( b.hot = 1 )  [ RunTime:0.000461s ]
+SQL: SELECT * FROM `hospital_info` WHERE ( `hos_name` LIKE '%人%' )  [ RunTime:0.000316s ]
+NOTIC: [8] Undefined offset: 65 C:\phpstudy\WWW\health\management\Application\Connector\Controller\SearchController.class.php 第 39 行.
+NOTIC: [8] Undefined offset: 75 C:\phpstudy\WWW\health\management\Application\Connector\Controller\SearchController.class.php 第 39 行.
+NOTIC: [8] Undefined offset: 76 C:\phpstudy\WWW\health\management\Application\Connector\Controller\SearchController.class.php 第 39 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000088s ]
+
+[ 2017-09-06T11:17:08+08:00 ] 113.81.17.72 /health/management/application/index.php/Connector/Search/searchdoc
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000353s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000030s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000039s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000087s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000030s ]
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.001946s ]
+SQL: SELECT a.*,b.hos_name,c.dep_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( a.doc_name LIKE '%人%' )  [ RunTime:0.000646s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000084s ]
+
+[ 2017-09-06T11:17:26+08:00 ] 113.81.17.72 /health/management/application/index.php/Connector/Search/searchdep
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000541s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000030s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000100s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000067s ]
+SQL: SHOW COLUMNS FROM `department_info` [ RunTime:0.001729s ]
+SQL: SELECT a.*,b.*,c.* FROM department_info a LEFT JOIN doctor_info c on a.dep_id=c.depa_id LEFT JOIN hospital_info b on b.hos_id=c.hos_id WHERE ( a.dep_name LIKE '%人%' )  [ RunTime:0.000483s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000083s ]
+
+[ 2017-09-06T11:17:36+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Doc/getDocDetail?doc_id=68
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000367s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000045s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000093s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000029s ]
+NOTIC: [2048] Declaration of Admin\Model\DoctorInfoModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) C:\phpstudy\WWW\health\management\Application\Admin\Model\DoctorInfoModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.002279s ]
+SQL: SELECT a.*,b.hos_name,c.dep_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = '68' ) LIMIT 1   [ RunTime:0.000547s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000056s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000195s ]
+
+[ 2017-09-06T11:17:37+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/User/get_pingjia
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000426s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000050s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000064s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000149s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000031s ]
+SQL: SHOW COLUMNS FROM `pingjia` [ RunTime:0.001757s ]
+SQL: SELECT a.*,b.user_name FROM pingjia a LEFT JOIN user_info b on b.user_phone=a.user_phone WHERE ( `doc_phone` = '123456' )  [ RunTime:0.000300s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000034s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000079s ]
+
+[ 2017-09-06T11:17:37+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/User/isAttention
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000364s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000044s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000099s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000032s ]
+SQL: SHOW COLUMNS FROM `attention_doc` [ RunTime:0.001815s ]
+SQL: SELECT * FROM `attention_doc` WHERE ( `doc_phone` = '123456' ) AND ( `user_phone` = '15768650568' ) LIMIT 1   [ RunTime:0.000274s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000047s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000108s ]
+
+[ 2017-09-06T11:17:44+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Doc/getDocDetail?doc_id=68
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000343s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000093s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000031s ]
+NOTIC: [2048] Declaration of Admin\Model\DoctorInfoModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) C:\phpstudy\WWW\health\management\Application\Admin\Model\DoctorInfoModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.001785s ]
+SQL: SELECT a.*,b.hos_name,c.dep_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = '68' ) LIMIT 1   [ RunTime:0.000477s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000033s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000079s ]
+
+[ 2017-09-06T11:17:53+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Doc/getDocDetail?doc_id=97
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000371s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000039s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000048s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000121s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000030s ]
+NOTIC: [2048] Declaration of Admin\Model\DoctorInfoModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) C:\phpstudy\WWW\health\management\Application\Admin\Model\DoctorInfoModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.002034s ]
+SQL: SELECT a.*,b.hos_name,c.dep_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = '97' ) LIMIT 1   [ RunTime:0.000487s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000046s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000103s ]
+
+[ 2017-09-06T11:17:53+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/User/get_pingjia
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000593s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000031s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000048s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000121s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000129s ]
+SQL: SHOW COLUMNS FROM `pingjia` [ RunTime:0.001820s ]
+SQL: SELECT a.*,b.user_name FROM pingjia a LEFT JOIN user_info b on b.user_phone=a.user_phone WHERE ( `doc_phone` = '18756330021' )  [ RunTime:0.000311s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000083s ]
+
+[ 2017-09-06T11:17:53+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/User/isAttention
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000426s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000031s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000043s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000093s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000034s ]
+SQL: SHOW COLUMNS FROM `attention_doc` [ RunTime:0.001573s ]
+SQL: SELECT * FROM `attention_doc` WHERE ( `doc_phone` = '18756330021' ) AND ( `user_phone` = '15768650568' ) LIMIT 1   [ RunTime:0.000322s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000085s ]
+
+[ 2017-09-06T11:17:55+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Doc/getDocDetail?doc_id=97
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000558s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000049s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000103s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000030s ]
+NOTIC: [2048] Declaration of Admin\Model\DoctorInfoModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) C:\phpstudy\WWW\health\management\Application\Admin\Model\DoctorInfoModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.001718s ]
+SQL: SELECT a.*,b.hos_name,c.dep_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = '97' ) LIMIT 1   [ RunTime:0.000474s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000083s ]
+
+[ 2017-09-06T11:18:03+08:00 ] 113.81.17.72 /health/management/application/index.php/Connector/Tuijian/tuijian_doc
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000382s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000062s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000094s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000032s ]
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.002015s ]
+SQL: SELECT `doc_id` FROM `doctor_info`  [ RunTime:0.000370s ]
+SQL: SHOW COLUMNS FROM `user_doc` [ RunTime:0.001545s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '1' )  [ RunTime:0.000223s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000188s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '10' )  [ RunTime:0.000194s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000183s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '20' )  [ RunTime:0.000175s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000187s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '31' )  [ RunTime:0.000171s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000179s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '32' )  [ RunTime:0.000277s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000195s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '34' )  [ RunTime:0.000187s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000197s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '35' )  [ RunTime:0.000161s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000172s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '36' )  [ RunTime:0.000181s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000185s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '37' )  [ RunTime:0.000194s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000174s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '38' )  [ RunTime:0.000170s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000170s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '39' )  [ RunTime:0.000158s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000188s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '42' )  [ RunTime:0.000192s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000197s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '43' )  [ RunTime:0.000193s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000195s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '44' )  [ RunTime:0.000198s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000221s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '45' )  [ RunTime:0.000192s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000212s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '46' )  [ RunTime:0.000183s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000188s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '47' )  [ RunTime:0.000172s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000180s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '48' )  [ RunTime:0.000161s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000172s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '49' )  [ RunTime:0.000238s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000210s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '50' )  [ RunTime:0.000202s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000200s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '51' )  [ RunTime:0.000195s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000200s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '52' )  [ RunTime:0.000196s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000200s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '53' )  [ RunTime:0.000196s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000198s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '54' )  [ RunTime:0.000193s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000200s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '55' )  [ RunTime:0.000193s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000202s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '66' )  [ RunTime:0.000192s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000199s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '67' )  [ RunTime:0.000206s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000266s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '68' )  [ RunTime:0.000255s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000219s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '69' )  [ RunTime:0.000197s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000200s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '70' )  [ RunTime:0.000194s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000200s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '71' )  [ RunTime:0.000194s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000199s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '72' )  [ RunTime:0.000239s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000238s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '73' )  [ RunTime:0.000195s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000199s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '74' )  [ RunTime:0.000194s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000296s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '75' )  [ RunTime:0.000197s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000202s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '76' )  [ RunTime:0.000197s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000364s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '77' )  [ RunTime:0.000219s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000181s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '78' )  [ RunTime:0.000200s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000185s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '79' )  [ RunTime:0.000187s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000176s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '80' )  [ RunTime:0.000167s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000175s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '81' )  [ RunTime:0.000174s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000174s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '82' )  [ RunTime:0.000166s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000172s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '83' )  [ RunTime:0.000164s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000171s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '84' )  [ RunTime:0.000175s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000196s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '85' )  [ RunTime:0.000181s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000320s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '86' )  [ RunTime:0.000184s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000178s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '87' )  [ RunTime:0.000160s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000199s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '88' )  [ RunTime:0.000183s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000182s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '89' )  [ RunTime:0.000180s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000178s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '90' )  [ RunTime:0.000159s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000162s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '91' )  [ RunTime:0.000153s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000161s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '92' )  [ RunTime:0.000167s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000168s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '93' )  [ RunTime:0.000153s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000167s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '94' )  [ RunTime:0.000160s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000160s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '95' )  [ RunTime:0.000151s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000194s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '96' )  [ RunTime:0.000191s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000175s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '97' )  [ RunTime:0.000170s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000166s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '98' )  [ RunTime:0.000170s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000175s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '99' )  [ RunTime:0.000164s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000166s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '100' )  [ RunTime:0.000154s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000168s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '101' )  [ RunTime:0.000153s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000160s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '102' )  [ RunTime:0.000157s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000162s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '103' )  [ RunTime:0.000152s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000165s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '104' )  [ RunTime:0.000160s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000170s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '105' )  [ RunTime:0.000152s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000162s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '106' )  [ RunTime:0.000158s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000175s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '107' )  [ RunTime:0.000177s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000183s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '108' )  [ RunTime:0.000156s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000162s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = 87 ) LIMIT 1   [ RunTime:0.000513s ]
+SQL: SELECT * FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = 86 ) LIMIT 1   [ RunTime:0.000311s ]
+SQL: SELECT * FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = 85 ) LIMIT 1   [ RunTime:0.000272s ]
+SQL: SELECT * FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = 88 ) LIMIT 1   [ RunTime:0.000267s ]
+SQL: SELECT * FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = 89 ) LIMIT 1   [ RunTime:0.000263s ]
+SQL: SELECT * FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = 91 ) LIMIT 1   [ RunTime:0.000277s ]
+SQL: SELECT * FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = 90 ) LIMIT 1   [ RunTime:0.000405s ]
+SQL: SELECT * FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = 84 ) LIMIT 1   [ RunTime:0.000349s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000039s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000093s ]
+
+[ 2017-09-06T11:18:07+08:00 ] 113.81.17.72 /health/management/application/index.php/Connector/Tuijian/tuijian_doc
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000349s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000038s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000086s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000031s ]
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.001807s ]
+SQL: SELECT `doc_id` FROM `doctor_info`  [ RunTime:0.000347s ]
+SQL: SHOW COLUMNS FROM `user_doc` [ RunTime:0.001297s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '1' )  [ RunTime:0.000192s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000173s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '10' )  [ RunTime:0.000166s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000165s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '20' )  [ RunTime:0.000182s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000167s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '31' )  [ RunTime:0.000157s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000164s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '32' )  [ RunTime:0.000159s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000166s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '34' )  [ RunTime:0.000177s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000165s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '35' )  [ RunTime:0.000156s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000161s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '36' )  [ RunTime:0.000158s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000161s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '37' )  [ RunTime:0.000154s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000161s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '38' )  [ RunTime:0.000156s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000165s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '39' )  [ RunTime:0.000154s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000163s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '42' )  [ RunTime:0.000160s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000165s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '43' )  [ RunTime:0.000155s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000161s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '44' )  [ RunTime:0.000153s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000162s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '45' )  [ RunTime:0.000156s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000161s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '46' )  [ RunTime:0.000181s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000190s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '47' )  [ RunTime:0.000165s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000160s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '48' )  [ RunTime:0.000181s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000224s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '49' )  [ RunTime:0.000221s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000252s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '50' )  [ RunTime:0.000211s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000186s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '51' )  [ RunTime:0.000163s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000165s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '52' )  [ RunTime:0.000159s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000162s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '53' )  [ RunTime:0.000170s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000165s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '54' )  [ RunTime:0.000154s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000160s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '55' )  [ RunTime:0.000153s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000164s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '66' )  [ RunTime:0.000153s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000195s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '67' )  [ RunTime:0.000159s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000194s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '68' )  [ RunTime:0.000157s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000161s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '69' )  [ RunTime:0.000162s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000162s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '70' )  [ RunTime:0.000151s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000160s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '71' )  [ RunTime:0.000153s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000160s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '72' )  [ RunTime:0.000151s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000189s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '73' )  [ RunTime:0.000154s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000159s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '74' )  [ RunTime:0.000157s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000158s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '75' )  [ RunTime:0.000178s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000164s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '76' )  [ RunTime:0.000155s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000164s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '77' )  [ RunTime:0.000159s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000161s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '78' )  [ RunTime:0.000158s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000165s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '79' )  [ RunTime:0.000166s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000168s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '80' )  [ RunTime:0.000331s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000228s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '81' )  [ RunTime:0.000186s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000191s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '82' )  [ RunTime:0.000173s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000175s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '83' )  [ RunTime:0.000169s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000182s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '84' )  [ RunTime:0.000166s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000177s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '85' )  [ RunTime:0.000175s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000179s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '86' )  [ RunTime:0.000187s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000188s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '87' )  [ RunTime:0.000165s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000176s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '88' )  [ RunTime:0.000164s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000173s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '89' )  [ RunTime:0.000182s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000180s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '90' )  [ RunTime:0.000172s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000172s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '91' )  [ RunTime:0.000251s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000192s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '92' )  [ RunTime:0.000193s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000186s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '93' )  [ RunTime:0.000175s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000201s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '94' )  [ RunTime:0.000196s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000181s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '95' )  [ RunTime:0.000169s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000164s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '96' )  [ RunTime:0.000163s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000167s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '97' )  [ RunTime:0.000153s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000160s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '98' )  [ RunTime:0.000155s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000158s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '99' )  [ RunTime:0.000161s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000184s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '100' )  [ RunTime:0.000201s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000199s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '101' )  [ RunTime:0.000173s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000167s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '102' )  [ RunTime:0.000171s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000172s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '103' )  [ RunTime:0.000157s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000191s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '104' )  [ RunTime:0.000174s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000165s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '105' )  [ RunTime:0.000161s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000164s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '106' )  [ RunTime:0.000159s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000173s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '107' )  [ RunTime:0.000157s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000161s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '108' )  [ RunTime:0.000153s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000162s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = 87 ) LIMIT 1   [ RunTime:0.000510s ]
+SQL: SELECT * FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = 86 ) LIMIT 1   [ RunTime:0.000339s ]
+SQL: SELECT * FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = 85 ) LIMIT 1   [ RunTime:0.000292s ]
+SQL: SELECT * FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = 88 ) LIMIT 1   [ RunTime:0.000288s ]
+SQL: SELECT * FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = 89 ) LIMIT 1   [ RunTime:0.000279s ]
+SQL: SELECT * FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = 91 ) LIMIT 1   [ RunTime:0.000287s ]
+SQL: SELECT * FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = 90 ) LIMIT 1   [ RunTime:0.000272s ]
+SQL: SELECT * FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = 84 ) LIMIT 1   [ RunTime:0.000265s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000090s ]
+
+[ 2017-09-06T11:18:08+08:00 ] 113.81.17.72 /health/management/application/index.php/Connector/Tuijian/tuijian_doc
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000354s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000041s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000089s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000029s ]
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.002419s ]
+SQL: SELECT `doc_id` FROM `doctor_info`  [ RunTime:0.000336s ]
+SQL: SHOW COLUMNS FROM `user_doc` [ RunTime:0.001202s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '1' )  [ RunTime:0.000190s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000198s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '10' )  [ RunTime:0.000197s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000176s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '20' )  [ RunTime:0.000165s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000162s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '31' )  [ RunTime:0.000161s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000161s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '32' )  [ RunTime:0.000162s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000161s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '34' )  [ RunTime:0.000163s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000162s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '35' )  [ RunTime:0.000218s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000211s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '36' )  [ RunTime:0.000170s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000167s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '37' )  [ RunTime:0.000160s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000164s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '38' )  [ RunTime:0.000172s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000353s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '39' )  [ RunTime:0.000233s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000221s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '42' )  [ RunTime:0.000180s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000181s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '43' )  [ RunTime:0.000178s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000177s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '44' )  [ RunTime:0.000169s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000374s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '45' )  [ RunTime:0.000192s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000179s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '46' )  [ RunTime:0.000165s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000171s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '47' )  [ RunTime:0.000181s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000170s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '48' )  [ RunTime:0.000161s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000166s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '49' )  [ RunTime:0.000167s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000169s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '50' )  [ RunTime:0.000194s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000200s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '51' )  [ RunTime:0.000161s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000174s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '52' )  [ RunTime:0.000182s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000167s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '53' )  [ RunTime:0.000163s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000166s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '54' )  [ RunTime:0.000167s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000170s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '55' )  [ RunTime:0.000158s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000168s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '66' )  [ RunTime:0.000173s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000166s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '67' )  [ RunTime:0.000163s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000168s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '68' )  [ RunTime:0.000158s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000168s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '69' )  [ RunTime:0.000161s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000164s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '70' )  [ RunTime:0.000158s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000166s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '71' )  [ RunTime:0.000157s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000298s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '72' )  [ RunTime:0.000197s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000185s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '73' )  [ RunTime:0.000171s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000177s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '74' )  [ RunTime:0.000168s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000179s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '75' )  [ RunTime:0.000180s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000180s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '76' )  [ RunTime:0.000226s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000254s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '77' )  [ RunTime:0.000307s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000201s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '78' )  [ RunTime:0.000203s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000249s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '79' )  [ RunTime:0.000191s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000183s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '80' )  [ RunTime:0.000172s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000184s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '81' )  [ RunTime:0.000166s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000176s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '82' )  [ RunTime:0.000173s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000173s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '83' )  [ RunTime:0.000167s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000177s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '84' )  [ RunTime:0.000173s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000174s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '85' )  [ RunTime:0.000166s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000179s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '86' )  [ RunTime:0.000172s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000176s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '87' )  [ RunTime:0.000165s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000173s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '88' )  [ RunTime:0.000167s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000203s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '89' )  [ RunTime:0.000178s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000175s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '90' )  [ RunTime:0.000170s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000183s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '91' )  [ RunTime:0.000165s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000198s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '92' )  [ RunTime:0.000169s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000173s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '93' )  [ RunTime:0.000180s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000202s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '94' )  [ RunTime:0.000174s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000207s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '95' )  [ RunTime:0.000209s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000193s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '96' )  [ RunTime:0.000213s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000184s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '97' )  [ RunTime:0.000175s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000178s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '98' )  [ RunTime:0.000271s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000210s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '99' )  [ RunTime:0.000287s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000190s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '100' )  [ RunTime:0.000183s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000184s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '101' )  [ RunTime:0.000170s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000178s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '102' )  [ RunTime:0.000194s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000211s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '103' )  [ RunTime:0.000212s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000230s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '104' )  [ RunTime:0.000179s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000208s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '105' )  [ RunTime:0.000178s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000177s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '106' )  [ RunTime:0.000191s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000178s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '107' )  [ RunTime:0.000168s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000173s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '108' )  [ RunTime:0.000166s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000187s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = 87 ) LIMIT 1   [ RunTime:0.000515s ]
+SQL: SELECT * FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = 86 ) LIMIT 1   [ RunTime:0.000305s ]
+SQL: SELECT * FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = 85 ) LIMIT 1   [ RunTime:0.000305s ]
+SQL: SELECT * FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = 88 ) LIMIT 1   [ RunTime:0.000291s ]
+SQL: SELECT * FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = 89 ) LIMIT 1   [ RunTime:0.000277s ]
+SQL: SELECT * FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = 91 ) LIMIT 1   [ RunTime:0.000281s ]
+SQL: SELECT * FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = 90 ) LIMIT 1   [ RunTime:0.000277s ]
+SQL: SELECT * FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = 84 ) LIMIT 1   [ RunTime:0.000278s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000092s ]
+
+[ 2017-09-06T11:18:10+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Doc/getDocDetail?doc_id=87
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000345s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000043s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000093s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000030s ]
+NOTIC: [2048] Declaration of Admin\Model\DoctorInfoModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) C:\phpstudy\WWW\health\management\Application\Admin\Model\DoctorInfoModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.001737s ]
+SQL: SELECT a.*,b.hos_name,c.dep_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = '87' ) LIMIT 1   [ RunTime:0.000484s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000083s ]
+
+[ 2017-09-06T11:18:10+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/User/get_pingjia
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000421s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000041s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000091s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000029s ]
+SQL: SHOW COLUMNS FROM `pingjia` [ RunTime:0.001557s ]
+SQL: SELECT a.*,b.user_name FROM pingjia a LEFT JOIN user_info b on b.user_phone=a.user_phone WHERE ( `doc_phone` = '15562653569' )  [ RunTime:0.000342s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000050s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000119s ]
+
+[ 2017-09-06T11:18:10+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/User/isAttention
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000350s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000041s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000049s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000108s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+SQL: SHOW COLUMNS FROM `attention_doc` [ RunTime:0.001588s ]
+SQL: SELECT * FROM `attention_doc` WHERE ( `doc_phone` = '15562653569' ) AND ( `user_phone` = '15768650568' ) LIMIT 1   [ RunTime:0.000313s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000053s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000120s ]
+
+[ 2017-09-06T11:18:12+08:00 ] 113.81.17.72 /health/management/application/index.php/Connector/Tuijian/tuijian_doc
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000358s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000040s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000089s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000030s ]
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.001709s ]
+SQL: SELECT `doc_id` FROM `doctor_info`  [ RunTime:0.000393s ]
+SQL: SHOW COLUMNS FROM `user_doc` [ RunTime:0.001573s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '1' )  [ RunTime:0.000222s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000202s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '10' )  [ RunTime:0.000200s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000243s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '20' )  [ RunTime:0.000200s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000200s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '31' )  [ RunTime:0.000194s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000198s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '32' )  [ RunTime:0.000198s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000221s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '34' )  [ RunTime:0.000200s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000200s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '35' )  [ RunTime:0.000194s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000199s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '36' )  [ RunTime:0.000195s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000199s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '37' )  [ RunTime:0.000199s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000200s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '38' )  [ RunTime:0.000194s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000207s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '39' )  [ RunTime:0.000196s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000198s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '42' )  [ RunTime:0.000202s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000198s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '43' )  [ RunTime:0.000195s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000197s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '44' )  [ RunTime:0.000193s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000206s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '45' )  [ RunTime:0.000209s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000209s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '46' )  [ RunTime:0.000198s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000239s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '47' )  [ RunTime:0.000265s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000272s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '48' )  [ RunTime:0.000206s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000213s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '49' )  [ RunTime:0.000207s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000203s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '50' )  [ RunTime:0.000196s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000198s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '51' )  [ RunTime:0.000192s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000197s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '52' )  [ RunTime:0.000195s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000285s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '53' )  [ RunTime:0.000198s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000198s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '54' )  [ RunTime:0.000247s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000270s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '55' )  [ RunTime:0.000197s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000210s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '66' )  [ RunTime:0.000177s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000181s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '67' )  [ RunTime:0.000218s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000216s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '68' )  [ RunTime:0.000192s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000346s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '69' )  [ RunTime:0.000206s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000200s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '70' )  [ RunTime:0.000180s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000197s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '71' )  [ RunTime:0.000174s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000175s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '72' )  [ RunTime:0.000165s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000182s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '73' )  [ RunTime:0.000165s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000175s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '74' )  [ RunTime:0.000242s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000220s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '75' )  [ RunTime:0.000210s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000201s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '76' )  [ RunTime:0.000204s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000203s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '77' )  [ RunTime:0.000204s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000218s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '78' )  [ RunTime:0.000198s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000212s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '79' )  [ RunTime:0.000223s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000201s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '80' )  [ RunTime:0.000199s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000186s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '81' )  [ RunTime:0.000173s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000173s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '82' )  [ RunTime:0.000171s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000177s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '83' )  [ RunTime:0.000255s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000175s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '84' )  [ RunTime:0.000186s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000170s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '85' )  [ RunTime:0.000165s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000170s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '86' )  [ RunTime:0.000158s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000162s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '87' )  [ RunTime:0.000161s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000163s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '88' )  [ RunTime:0.000154s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000166s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '89' )  [ RunTime:0.000156s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000162s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '90' )  [ RunTime:0.000167s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000166s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '91' )  [ RunTime:0.000153s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000162s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '92' )  [ RunTime:0.000155s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000160s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '93' )  [ RunTime:0.000156s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000178s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '94' )  [ RunTime:0.000171s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000197s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '95' )  [ RunTime:0.000181s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000195s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '96' )  [ RunTime:0.000211s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000180s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '97' )  [ RunTime:0.000166s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000170s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '98' )  [ RunTime:0.000160s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000175s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '99' )  [ RunTime:0.000159s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000165s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '100' )  [ RunTime:0.000157s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000236s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '101' )  [ RunTime:0.000185s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000196s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '102' )  [ RunTime:0.000160s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000166s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '103' )  [ RunTime:0.000169s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000194s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '104' )  [ RunTime:0.000174s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000214s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '105' )  [ RunTime:0.000198s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000197s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '106' )  [ RunTime:0.000195s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000194s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '107' )  [ RunTime:0.000190s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000192s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '108' )  [ RunTime:0.000217s ]
+SQL: SELECT * FROM `user_doc`  [ RunTime:0.000193s ]
+NOTIC: [2] Invalid argument supplied for foreach() C:\phpstudy\WWW\health\management\Application\Connector\Controller\TuijianController.class.php 第 238 行.
+SQL: SELECT * FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = 87 ) LIMIT 1   [ RunTime:0.000556s ]
+SQL: SELECT * FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = 86 ) LIMIT 1   [ RunTime:0.000308s ]
+SQL: SELECT * FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = 85 ) LIMIT 1   [ RunTime:0.000280s ]
+SQL: SELECT * FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = 88 ) LIMIT 1   [ RunTime:0.000321s ]
+SQL: SELECT * FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = 89 ) LIMIT 1   [ RunTime:0.000288s ]
+SQL: SELECT * FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = 91 ) LIMIT 1   [ RunTime:0.000274s ]
+SQL: SELECT * FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = 90 ) LIMIT 1   [ RunTime:0.000264s ]
+SQL: SELECT * FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = 84 ) LIMIT 1   [ RunTime:0.000268s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000093s ]
+
+[ 2017-09-06T11:18:15+08:00 ] 113.81.17.72 /health/management/application/index.php/Connector/Depa/getdepname
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000379s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000039s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000089s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000030s ]
+SQL: SHOW COLUMNS FROM `department_info` [ RunTime:0.001539s ]
+SQL: SELECT * FROM `department_info` WHERE ( `dep_id` = '12' ) LIMIT 1   [ RunTime:0.000251s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000085s ]
+
+[ 2017-09-06T11:18:15+08:00 ] 113.81.17.72 /health/management/application/index.php/Connector/Tuijian/get_dep_doc
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000371s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000033s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000043s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000092s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000030s ]
+SQL: SHOW COLUMNS FROM `department_info` [ RunTime:0.002185s ]
+SQL: SELECT * FROM `department_info` LIMIT 1   [ RunTime:0.000282s ]
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.001724s ]
+SQL: SELECT a.*,b.hos_name,c.dep_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( c.parent_id = '12' ) AND ( b.hos_address LIKE '%惠州%' ) ORDER BY a.doc_R desc  [ RunTime:0.001055s ]
+SQL: SELECT a.*,b.hos_name,c.dep_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( a.depa_id = '12' ) AND ( b.hos_address LIKE '%惠州%' ) ORDER BY a.doc_R desc  [ RunTime:0.000418s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000083s ]
+
+[ 2017-09-06T11:18:21+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Hos/getNearbyHos?lat=23.03396&longt=114.416873
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000364s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000091s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000029s ]
+SQL: SHOW COLUMNS FROM `hospital_info` [ RunTime:0.002205s ]
+SQL: SELECT * FROM `hospital_info` WHERE (  (`hos_longitude` BETWEEN '113.92868967051' AND '114.90505632949' ) ) AND (  (`hos_latitude` BETWEEN '22.584698013896' AND '23.483221986104' ) )  [ RunTime:0.000445s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000081s ]
+
+[ 2017-09-06T11:18:23+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Hos/getHosImg?hos_id=53
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000375s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000043s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000097s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000031s ]
+SQL: SHOW COLUMNS FROM `hos_img` [ RunTime:0.001672s ]
+SQL: SELECT * FROM `hos_img` WHERE ( `hos_id` = '53' )  [ RunTime:0.000327s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000085s ]
+
+[ 2017-09-06T11:18:23+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/hos/getHosDetail?hos_id=53
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000381s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000045s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000098s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000045s ]
+NOTIC: [2048] Declaration of Admin\Model\HospitalInfoModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) C:\phpstudy\WWW\health\management\Application\Admin\Model\HospitalInfoModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `hospital_info` [ RunTime:0.002282s ]
+SQL: SELECT * FROM `hospital_info` WHERE ( `hos_id` = 53 ) LIMIT 1   [ RunTime:0.000342s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000090s ]
+
+[ 2017-09-06T11:18:23+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/User/isAttentionHos
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000562s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000037s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000046s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000098s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000030s ]
+SQL: SHOW COLUMNS FROM `attention_hos` [ RunTime:0.001792s ]
+SQL: SELECT * FROM `attention_hos` WHERE ( `hos_id` = '53' ) AND ( `user_phone` = '15768650568' ) LIMIT 1   [ RunTime:0.000266s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000055s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000129s ]
+
+[ 2017-09-06T11:18:32+08:00 ] 113.81.17.72 /health/management/application/index.php/Connector/Tuijian/get_dep_doc
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000330s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000030s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000038s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000084s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000030s ]
+SQL: SHOW COLUMNS FROM `department_info` [ RunTime:0.001687s ]
+SQL: SELECT * FROM `department_info` LIMIT 1   [ RunTime:0.000234s ]
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.001772s ]
+SQL: SELECT a.*,b.hos_name,c.dep_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( c.parent_id = '2' ) AND ( b.hos_address LIKE '%全部%' ) ORDER BY a.doc_R desc  [ RunTime:0.001075s ]
+SQL: SELECT a.*,b.hos_name,c.dep_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( a.depa_id = '2' ) AND ( b.hos_address LIKE '%全部%' ) ORDER BY a.doc_R desc  [ RunTime:0.000442s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000034s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000081s ]
+
+[ 2017-09-06T11:18:32+08:00 ] 113.81.17.72 /health/management/application/index.php/Connector/Depa/getdepname
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000364s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000037s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000086s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000062s ]
+SQL: SHOW COLUMNS FROM `department_info` [ RunTime:0.001380s ]
+SQL: SELECT * FROM `department_info` WHERE ( `dep_id` = '2' ) LIMIT 1   [ RunTime:0.000233s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000084s ]
+
+[ 2017-09-06T11:18:41+08:00 ] 113.81.17.72 /health/management/application/index.php/Connector/Depa/getdepname
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000366s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000038s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000088s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000029s ]
+SQL: SHOW COLUMNS FROM `department_info` [ RunTime:0.002082s ]
+SQL: SELECT * FROM `department_info` WHERE ( `dep_id` = '2' ) LIMIT 1   [ RunTime:0.000389s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000054s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000125s ]
+
+[ 2017-09-06T11:18:41+08:00 ] 113.81.17.72 /health/management/application/index.php/Connector/Tuijian/get_dep_doc
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000389s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000030s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000040s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000094s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000054s ]
+SQL: SHOW COLUMNS FROM `department_info` [ RunTime:0.001413s ]
+SQL: SELECT * FROM `department_info` LIMIT 1   [ RunTime:0.000233s ]
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.001478s ]
+SQL: SELECT a.*,b.hos_name,c.dep_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( c.parent_id = '2' ) AND ( b.hos_address LIKE '%广东%' ) ORDER BY a.doc_R desc  [ RunTime:0.001093s ]
+SQL: SELECT a.*,b.hos_name,c.dep_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( a.depa_id = '2' ) AND ( b.hos_address LIKE '%广东%' ) ORDER BY a.doc_R desc  [ RunTime:0.000466s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000112s ]
+
+[ 2017-09-06T11:18:55+08:00 ] 113.81.17.72 /health/management/application/index.php/Connector/Tuijian/get_dep_doc
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000366s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000041s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000099s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000030s ]
+SQL: SHOW COLUMNS FROM `department_info` [ RunTime:0.001614s ]
+SQL: SELECT * FROM `department_info` LIMIT 1   [ RunTime:0.000266s ]
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.001522s ]
+SQL: SELECT a.*,b.hos_name,c.dep_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( c.parent_id = '2' ) AND ( b.hos_address LIKE '%浙江%' ) ORDER BY a.doc_R desc  [ RunTime:0.001128s ]
+SQL: SELECT a.*,b.hos_name,c.dep_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( a.depa_id = '2' ) AND ( b.hos_address LIKE '%浙江%' ) ORDER BY a.doc_R desc  [ RunTime:0.000417s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000053s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000133s ]
+
+[ 2017-09-06T11:18:56+08:00 ] 113.81.17.72 /health/management/application/index.php/Connector/Depa/getdepname
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000373s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000040s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000089s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000044s ]
+SQL: SHOW COLUMNS FROM `department_info` [ RunTime:0.001397s ]
+SQL: SELECT * FROM `department_info` WHERE ( `dep_id` = '2' ) LIMIT 1   [ RunTime:0.000238s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000084s ]
+
+[ 2017-09-06T11:18:59+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Tuijian/user_doc
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000390s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000090s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000030s ]
+SQL: SHOW COLUMNS FROM `user_doc` [ RunTime:0.001506s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '87' ) AND ( `user_phone` = '15768650568' ) LIMIT 1   [ RunTime:0.000241s ]
+SQL: INSERT INTO `user_doc` (`doc_id`,`user_phone`) VALUES ('87','15768650568') [ RunTime:0.000213s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000080s ]
+
+[ 2017-09-06T11:18:59+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Doc/getDocDetail?doc_id=87
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000320s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000043s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000092s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000029s ]
+NOTIC: [2048] Declaration of Admin\Model\DoctorInfoModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) C:\phpstudy\WWW\health\management\Application\Admin\Model\DoctorInfoModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.001979s ]
+SQL: SELECT a.*,b.hos_name,c.dep_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = '87' ) LIMIT 1   [ RunTime:0.000478s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000085s ]
+
+[ 2017-09-06T11:19:00+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/User/get_pingjia
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000329s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000036s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000083s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000032s ]
+SQL: SHOW COLUMNS FROM `pingjia` [ RunTime:0.002091s ]
+SQL: SELECT a.*,b.user_name FROM pingjia a LEFT JOIN user_info b on b.user_phone=a.user_phone WHERE ( `doc_phone` = '15562653569' )  [ RunTime:0.000389s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000085s ]
+
+[ 2017-09-06T11:19:00+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/User/isAttention
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000361s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000038s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000086s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000037s ]
+SQL: SHOW COLUMNS FROM `attention_doc` [ RunTime:0.001427s ]
+SQL: SELECT * FROM `attention_doc` WHERE ( `doc_phone` = '15562653569' ) AND ( `user_phone` = '15768650568' ) LIMIT 1   [ RunTime:0.000287s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000046s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000096s ]
+
+[ 2017-09-06T11:19:02+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Doc/getDocDetail?doc_id=67
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000336s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000043s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000092s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [2048] Declaration of Admin\Model\DoctorInfoModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) C:\phpstudy\WWW\health\management\Application\Admin\Model\DoctorInfoModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.002562s ]
+SQL: SELECT a.*,b.hos_name,c.dep_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = '67' ) LIMIT 1   [ RunTime:0.000518s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000083s ]
+
+[ 2017-09-06T11:19:02+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Tuijian/user_doc
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000374s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000092s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000041s ]
+SQL: SHOW COLUMNS FROM `user_doc` [ RunTime:0.001435s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '67' ) AND ( `user_phone` = '15768650568' ) LIMIT 1   [ RunTime:0.000227s ]
+SQL: INSERT INTO `user_doc` (`doc_id`,`user_phone`) VALUES ('67','15768650568') [ RunTime:0.000170s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000081s ]
+
+[ 2017-09-06T11:19:02+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/User/get_pingjia
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000346s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000061s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000128s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000029s ]
+SQL: SHOW COLUMNS FROM `pingjia` [ RunTime:0.001600s ]
+SQL: SELECT a.*,b.user_name FROM pingjia a LEFT JOIN user_info b on b.user_phone=a.user_phone WHERE ( `doc_phone` = '15768650056' )  [ RunTime:0.000313s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000083s ]
+
+[ 2017-09-06T11:19:02+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/User/isAttention
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000449s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000038s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000057s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000124s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000039s ]
+SQL: SHOW COLUMNS FROM `attention_doc` [ RunTime:0.001686s ]
+SQL: SELECT * FROM `attention_doc` WHERE ( `doc_phone` = '15768650056' ) AND ( `user_phone` = '15768650568' ) LIMIT 1   [ RunTime:0.000290s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000086s ]
+
+[ 2017-09-06T11:19:06+08:00 ] 113.81.17.72 /health/management/application/index.php/Connector/Tuijian/get_dep_doc
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000350s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000040s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000086s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000031s ]
+SQL: SHOW COLUMNS FROM `department_info` [ RunTime:0.001468s ]
+SQL: SELECT * FROM `department_info` LIMIT 1   [ RunTime:0.000226s ]
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.001453s ]
+SQL: SELECT a.*,b.hos_name,c.dep_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( c.parent_id = '3' ) AND ( b.hos_address LIKE '%浙江%' ) ORDER BY a.doc_R desc  [ RunTime:0.001090s ]
+SQL: SELECT a.*,b.hos_name,c.dep_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( a.depa_id = '3' ) AND ( b.hos_address LIKE '%浙江%' ) ORDER BY a.doc_R desc  [ RunTime:0.000523s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000050s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000120s ]
+
+[ 2017-09-06T11:19:06+08:00 ] 113.81.17.72 /health/management/application/index.php/Connector/Depa/getdepname
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000367s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000041s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000088s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000046s ]
+SQL: SHOW COLUMNS FROM `department_info` [ RunTime:0.001467s ]
+SQL: SELECT * FROM `department_info` WHERE ( `dep_id` = '3' ) LIMIT 1   [ RunTime:0.000257s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000039s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000088s ]
+
+[ 2017-09-06T11:19:09+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Tuijian/user_doc
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000321s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000037s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000082s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000114s ]
+SQL: SHOW COLUMNS FROM `user_doc` [ RunTime:0.001465s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '69' ) AND ( `user_phone` = '15768650568' ) LIMIT 1   [ RunTime:0.000219s ]
+SQL: INSERT INTO `user_doc` (`doc_id`,`user_phone`) VALUES ('69','15768650568') [ RunTime:0.000160s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000034s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000078s ]
+
+[ 2017-09-06T11:19:09+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Doc/getDocDetail?doc_id=69
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000359s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000091s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000035s ]
+NOTIC: [2048] Declaration of Admin\Model\DoctorInfoModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) C:\phpstudy\WWW\health\management\Application\Admin\Model\DoctorInfoModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.001819s ]
+SQL: SELECT a.*,b.hos_name,c.dep_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = '69' ) LIMIT 1   [ RunTime:0.000467s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000085s ]
+
+[ 2017-09-06T11:19:09+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/User/isAttention
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000328s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000030s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000037s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000082s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000031s ]
+SQL: SHOW COLUMNS FROM `attention_doc` [ RunTime:0.001684s ]
+SQL: SELECT * FROM `attention_doc` WHERE ( `doc_phone` = '13756555056' ) AND ( `user_phone` = '15768650568' ) LIMIT 1   [ RunTime:0.000320s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000042s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000155s ]
+
+[ 2017-09-06T11:19:09+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/User/get_pingjia
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000370s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000038s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000087s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000039s ]
+SQL: SHOW COLUMNS FROM `pingjia` [ RunTime:0.002147s ]
+SQL: SELECT a.*,b.user_name FROM pingjia a LEFT JOIN user_info b on b.user_phone=a.user_phone WHERE ( `doc_phone` = '13756555056' )  [ RunTime:0.000375s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000093s ]
+
+[ 2017-09-06T11:19:11+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Doc/getDocDetail?doc_id=69
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000378s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000035s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000047s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000102s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000032s ]
+NOTIC: [2048] Declaration of Admin\Model\DoctorInfoModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) C:\phpstudy\WWW\health\management\Application\Admin\Model\DoctorInfoModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.001773s ]
+SQL: SELECT a.*,b.hos_name,c.dep_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = '69' ) LIMIT 1   [ RunTime:0.000478s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000084s ]
+
+[ 2017-09-06T11:19:16+08:00 ] 113.81.17.72 /health/management/application/index.php/Connector/Depa/getdepname
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000355s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000039s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000089s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000039s ]
+SQL: SHOW COLUMNS FROM `department_info` [ RunTime:0.001528s ]
+SQL: SELECT * FROM `department_info` WHERE ( `dep_id` = '5' ) LIMIT 1   [ RunTime:0.000276s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000039s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000087s ]
+
+[ 2017-09-06T11:19:16+08:00 ] 113.81.17.72 /health/management/application/index.php/Connector/Tuijian/get_dep_doc
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000329s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000040s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000091s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000030s ]
+SQL: SHOW COLUMNS FROM `department_info` [ RunTime:0.001497s ]
+SQL: SELECT * FROM `department_info` LIMIT 1   [ RunTime:0.000285s ]
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.001468s ]
+SQL: SELECT a.*,b.hos_name,c.dep_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( c.parent_id = '5' ) AND ( b.hos_address LIKE '%浙江%' ) ORDER BY a.doc_R desc  [ RunTime:0.000995s ]
+SQL: SELECT a.*,b.hos_name,c.dep_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( a.depa_id = '5' ) AND ( b.hos_address LIKE '%浙江%' ) ORDER BY a.doc_R desc  [ RunTime:0.000490s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000034s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000087s ]
+
+[ 2017-09-06T11:19:17+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Tuijian/user_doc
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000328s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000039s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000085s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000029s ]
+SQL: SHOW COLUMNS FROM `user_doc` [ RunTime:0.001467s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '80' ) AND ( `user_phone` = '15768650568' ) LIMIT 1   [ RunTime:0.000232s ]
+SQL: INSERT INTO `user_doc` (`doc_id`,`user_phone`) VALUES ('80','15768650568') [ RunTime:0.000177s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000081s ]
+
+[ 2017-09-06T11:19:17+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Doc/getDocDetail?doc_id=80
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000362s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000044s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000095s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000030s ]
+NOTIC: [2048] Declaration of Admin\Model\DoctorInfoModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) C:\phpstudy\WWW\health\management\Application\Admin\Model\DoctorInfoModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.001821s ]
+SQL: SELECT a.*,b.hos_name,c.dep_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = '80' ) LIMIT 1   [ RunTime:0.000486s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000085s ]
+
+[ 2017-09-06T11:19:17+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/User/get_pingjia
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000372s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000027s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000039s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000088s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000030s ]
+SQL: SHOW COLUMNS FROM `pingjia` [ RunTime:0.001863s ]
+SQL: SELECT a.*,b.user_name FROM pingjia a LEFT JOIN user_info b on b.user_phone=a.user_phone WHERE ( `doc_phone` = '15768650037' )  [ RunTime:0.000322s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000083s ]
+
+[ 2017-09-06T11:19:17+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/User/isAttention
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000548s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000036s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000082s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000048s ]
+SQL: SHOW COLUMNS FROM `attention_doc` [ RunTime:0.001596s ]
+SQL: SELECT * FROM `attention_doc` WHERE ( `doc_phone` = '15768650037' ) AND ( `user_phone` = '15768650568' ) LIMIT 1   [ RunTime:0.000290s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000086s ]
+
+[ 2017-09-06T11:19:19+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Tuijian/user_doc
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000327s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000039s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000108s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000029s ]
+SQL: SHOW COLUMNS FROM `user_doc` [ RunTime:0.001459s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '81' ) AND ( `user_phone` = '15768650568' ) LIMIT 1   [ RunTime:0.000221s ]
+SQL: INSERT INTO `user_doc` (`doc_id`,`user_phone`) VALUES ('81','15768650568') [ RunTime:0.000164s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000081s ]
+
+[ 2017-09-06T11:19:19+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Doc/getDocDetail?doc_id=81
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000364s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000030s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000043s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000095s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000038s ]
+NOTIC: [2048] Declaration of Admin\Model\DoctorInfoModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) C:\phpstudy\WWW\health\management\Application\Admin\Model\DoctorInfoModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.002329s ]
+SQL: SELECT a.*,b.hos_name,c.dep_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = '81' ) LIMIT 1   [ RunTime:0.000534s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000042s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000095s ]
+
+[ 2017-09-06T11:19:19+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/User/isAttention
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000336s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000038s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000085s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000031s ]
+SQL: SHOW COLUMNS FROM `attention_doc` [ RunTime:0.001568s ]
+SQL: SELECT * FROM `attention_doc` WHERE ( `doc_phone` = '123456' ) AND ( `user_phone` = '15768650568' ) LIMIT 1   [ RunTime:0.000273s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000034s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000078s ]
+
+[ 2017-09-06T11:19:19+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/User/get_pingjia
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000385s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000038s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000087s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000039s ]
+SQL: SHOW COLUMNS FROM `pingjia` [ RunTime:0.001493s ]
+SQL: SELECT a.*,b.user_name FROM pingjia a LEFT JOIN user_info b on b.user_phone=a.user_phone WHERE ( `doc_phone` = '123456' )  [ RunTime:0.000299s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000088s ]
+
+[ 2017-09-06T11:19:22+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Tuijian/user_doc
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000362s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000093s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000032s ]
+SQL: SHOW COLUMNS FROM `user_doc` [ RunTime:0.001579s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '94' ) AND ( `user_phone` = '15768650568' ) LIMIT 1   [ RunTime:0.000269s ]
+SQL: INSERT INTO `user_doc` (`doc_id`,`user_phone`) VALUES ('94','15768650568') [ RunTime:0.000189s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000058s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000136s ]
+
+[ 2017-09-06T11:19:22+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Doc/getDocDetail?doc_id=94
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000329s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000047s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000094s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000029s ]
+NOTIC: [2048] Declaration of Admin\Model\DoctorInfoModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) C:\phpstudy\WWW\health\management\Application\Admin\Model\DoctorInfoModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.001779s ]
+SQL: SELECT a.*,b.hos_name,c.dep_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = '94' ) LIMIT 1   [ RunTime:0.000500s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000039s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000087s ]
+
+[ 2017-09-06T11:19:22+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/User/get_pingjia
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000346s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000034s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000055s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000115s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000075s ]
+SQL: SHOW COLUMNS FROM `pingjia` [ RunTime:0.001523s ]
+SQL: SELECT a.*,b.user_name FROM pingjia a LEFT JOIN user_info b on b.user_phone=a.user_phone WHERE ( `doc_phone` = '15768650054' )  [ RunTime:0.000325s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000057s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000129s ]
+
+[ 2017-09-06T11:19:22+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/User/isAttention
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000377s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000030s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000090s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000041s ]
+SQL: SHOW COLUMNS FROM `attention_doc` [ RunTime:0.001660s ]
+SQL: SELECT * FROM `attention_doc` WHERE ( `doc_phone` = '15768650054' ) AND ( `user_phone` = '15768650568' ) LIMIT 1   [ RunTime:0.000306s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000041s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000098s ]
+
+[ 2017-09-06T11:19:25+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Tuijian/user_doc
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000522s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000065s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000142s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000031s ]
+SQL: SHOW COLUMNS FROM `user_doc` [ RunTime:0.001681s ]
+SQL: SELECT * FROM `user_doc` WHERE ( `doc_id` = '73' ) AND ( `user_phone` = '15768650568' ) LIMIT 1   [ RunTime:0.000286s ]
+SQL: INSERT INTO `user_doc` (`doc_id`,`user_phone`) VALUES ('73','15768650568') [ RunTime:0.000196s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000043s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000154s ]
+
+[ 2017-09-06T11:19:25+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Doc/getDocDetail?doc_id=73
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000318s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000043s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000091s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000029s ]
+NOTIC: [2048] Declaration of Admin\Model\DoctorInfoModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) C:\phpstudy\WWW\health\management\Application\Admin\Model\DoctorInfoModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.003265s ]
+SQL: SELECT a.*,b.hos_name,c.dep_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = '73' ) LIMIT 1   [ RunTime:0.000593s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000087s ]
+
+[ 2017-09-06T11:19:25+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/User/get_pingjia
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000484s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000065s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000146s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000045s ]
+SQL: SHOW COLUMNS FROM `pingjia` [ RunTime:0.001704s ]
+SQL: SELECT a.*,b.user_name FROM pingjia a LEFT JOIN user_info b on b.user_phone=a.user_phone WHERE ( `doc_phone` = '15562653569' )  [ RunTime:0.000340s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000086s ]
+
+[ 2017-09-06T11:19:25+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/User/isAttention
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000359s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000039s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000089s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000047s ]
+SQL: SHOW COLUMNS FROM `attention_doc` [ RunTime:0.001594s ]
+SQL: SELECT * FROM `attention_doc` WHERE ( `doc_phone` = '15562653569' ) AND ( `user_phone` = '15768650568' ) LIMIT 1   [ RunTime:0.000303s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000090s ]
+
+[ 2017-09-06T11:19:27+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Doc/getDocDetail?doc_id=73
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000380s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000066s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000143s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000041s ]
+NOTIC: [2048] Declaration of Admin\Model\DoctorInfoModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) C:\phpstudy\WWW\health\management\Application\Admin\Model\DoctorInfoModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.001769s ]
+SQL: SELECT a.*,b.hos_name,c.dep_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = '73' ) LIMIT 1   [ RunTime:0.000472s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000086s ]
+
+[ 2017-09-06T11:19:37+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Health/getDiary?user_phone=15768650568&drug_date=201796
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000360s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000092s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000032s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.001755s ]
+SQL: SELECT `user_id` FROM `user_info` WHERE ( `user_phone` = '15768650568' ) LIMIT 1   [ RunTime:0.000245s ]
+SQL: SHOW COLUMNS FROM `drug_diary` [ RunTime:0.001473s ]
+SQL: SELECT * FROM `drug_diary` WHERE ( `user_id` = '1' ) AND ( `drug_date` = '201796' )  [ RunTime:0.000263s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000034s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000080s ]
+
+[ 2017-09-06T11:19:40+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Health/getHisRelaName?user_phone=15768650568
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000371s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000042s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000059s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000136s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000046s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.001874s ]
+SQL: SELECT `user_id` FROM `user_info` WHERE ( `user_phone` = '15768650568' ) LIMIT 1   [ RunTime:0.000328s ]
+SQL: SHOW COLUMNS FROM `relative_info` [ RunTime:0.001804s ]
+SQL: SELECT `relative_id`,`relative_name` FROM `relative_info` WHERE ( `user_id` = '1' )  [ RunTime:0.000283s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000045s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000110s ]
+
+[ 2017-09-06T11:19:40+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Health/getHisVis?relative_id=0&user_phone=15768650568
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000480s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000048s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000067s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000149s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000031s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.002437s ]
+SQL: SELECT `user_id` FROM `user_info` WHERE ( `user_phone` = '15768650568' ) LIMIT 1   [ RunTime:0.000241s ]
+SQL: SHOW COLUMNS FROM `see_doc_case` [ RunTime:0.001634s ]
+SQL: SELECT a.* FROM see_doc_case a WHERE ( a.relative_id = '0' ) AND ( a.user_id = '1' )  [ RunTime:0.000327s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000057s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000138s ]
+
+[ 2017-09-06T11:19:41+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Health/get_online_vis
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.002070s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000030s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000039s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000094s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+SQL: SHOW COLUMNS FROM `zixun` [ RunTime:0.001706s ]
+SQL: SELECT a.*,b.hos_name,c.dep_name,d.doc_name FROM zixun a LEFT JOIN doctor_info d on d.doc_phone=a.doc_phone LEFT JOIN hospital_info b on b.hos_id=d.hos_id LEFT JOIN department_info c on c.dep_id=d.depa_id WHERE ( a.user_phone = '15768650568' ) ORDER BY id desc  [ RunTime:0.005881s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000090s ]
+
+[ 2017-09-06T11:19:41+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Chufang/get_user_chufang
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000347s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000078s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000140s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000038s ]
+SQL: SHOW COLUMNS FROM `chufang` [ RunTime:0.001812s ]
+NOTIC: [8] Use of undefined constant eq - assumed 'eq' C:\phpstudy\WWW\health\management\Application\Connector\Controller\ChufangController.class.php 第 95 行.
+SQL: SELECT * FROM `chufang` WHERE ( `user_phone` = '15768650568' ) ORDER BY cf_id desc  [ RunTime:0.000320s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000043s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000092s ]
+
+[ 2017-09-06T11:19:50+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Health/getHisDetail?seecase_id=8
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000354s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000041s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000090s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000029s ]
+SQL: SHOW COLUMNS FROM `see_doc_case` [ RunTime:0.001630s ]
+SQL: SELECT a.* FROM see_doc_case a WHERE ( a.seecase_id = '8' ) LIMIT 1   [ RunTime:0.000346s ]
+SQL: SHOW COLUMNS FROM `page_img` [ RunTime:0.001378s ]
+SQL: SELECT * FROM `page_img` WHERE ( `seecase_id` = '8' )  [ RunTime:0.000213s ]
+SQL: SHOW COLUMNS FROM `check_img` [ RunTime:0.001392s ]
+SQL: SELECT * FROM `check_img` WHERE ( `seecase_id` = '8' )  [ RunTime:0.000204s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000086s ]
+
+[ 2017-09-06T11:19:58+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/health/getHisDetail?seecase_id=8
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000424s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000042s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000068s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000137s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000041s ]
+SQL: SHOW COLUMNS FROM `see_doc_case` [ RunTime:0.001748s ]
+SQL: SELECT a.* FROM see_doc_case a WHERE ( a.seecase_id = '8' ) LIMIT 1   [ RunTime:0.000332s ]
+SQL: SHOW COLUMNS FROM `page_img` [ RunTime:0.001296s ]
+SQL: SELECT * FROM `page_img` WHERE ( `seecase_id` = '8' )  [ RunTime:0.000221s ]
+SQL: SHOW COLUMNS FROM `check_img` [ RunTime:0.001324s ]
+SQL: SELECT * FROM `check_img` WHERE ( `seecase_id` = '8' )  [ RunTime:0.000206s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000086s ]
+
+[ 2017-09-06T11:20:07+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/User/tixing
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000388s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000031s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000039s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000088s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000052s ]
+SQL: SHOW COLUMNS FROM `tixing` [ RunTime:0.001810s ]
+SQL: SELECT * FROM `tixing` WHERE ( `user_phone` = '15768650568' )  [ RunTime:0.000255s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000049s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000114s ]
+
+[ 2017-09-06T11:20:12+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/User/getUserData?user_phone=15768650568
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000367s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000045s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000095s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000032s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.001822s ]
+SQL: SELECT * FROM `user_info` WHERE ( `user_phone` = '15768650568' ) LIMIT 1   [ RunTime:0.000459s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000056s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000136s ]
+
+[ 2017-09-06T11:20:12+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/User/getRelaData?user_phone=15768650568
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000347s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000040s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000088s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000030s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.001728s ]
+SQL: SELECT `user_id` FROM `user_info` WHERE ( `user_phone` = '15768650568' ) LIMIT 1   [ RunTime:0.000235s ]
+SQL: SHOW COLUMNS FROM `relative_info` [ RunTime:0.001359s ]
+SQL: SELECT * FROM `relative_info` WHERE ( `user_id` = '1' )  [ RunTime:0.000284s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000039s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000086s ]
+
+[ 2017-09-06T11:20:19+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Health/getFamily?user_phone=15768650568
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000355s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000090s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000030s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.001850s ]
+SQL: SELECT `user_id` FROM `user_info` WHERE ( `user_phone` = '15768650568' ) LIMIT 1   [ RunTime:0.000277s ]
+SQL: SHOW COLUMNS FROM `family_info` [ RunTime:0.001517s ]
+SQL: SELECT * FROM `family_info` WHERE ( `user_id` = '1' )  [ RunTime:0.000237s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000057s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000139s ]
+
+[ 2017-09-06T11:20:36+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Health/addFamily
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000344s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000026s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000040s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000093s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000029s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.001716s ]
+SQL: SELECT `user_id` FROM `user_info` WHERE ( `user_phone` = '15768650568' ) LIMIT 1   [ RunTime:0.000252s ]
+SQL: SHOW COLUMNS FROM `family_info` [ RunTime:0.001305s ]
+SQL: INSERT INTO `family_info` (`relation`,`clan`,`sick`,`user_id`) VALUES ('外公','母系','糖尿病',1) [ RunTime:0.002907s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000086s ]
+
+[ 2017-09-06T11:20:37+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Health/getFamily?user_phone=15768650568
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000363s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000092s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000030s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.002440s ]
+SQL: SELECT `user_id` FROM `user_info` WHERE ( `user_phone` = '15768650568' ) LIMIT 1   [ RunTime:0.000307s ]
+SQL: SHOW COLUMNS FROM `family_info` [ RunTime:0.001635s ]
+SQL: SELECT * FROM `family_info` WHERE ( `user_id` = '1' )  [ RunTime:0.000268s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000085s ]
+
+[ 2017-09-06T11:20:51+08:00 ] 113.81.17.72 /health/management/application/index.php/Connector/Tuijian/get_dep_doc
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000478s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000030s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000039s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000089s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000031s ]
+SQL: SHOW COLUMNS FROM `department_info` [ RunTime:0.001479s ]
+SQL: SELECT * FROM `department_info` LIMIT 1   [ RunTime:0.000224s ]
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.001546s ]
+SQL: SELECT a.*,b.hos_name,c.dep_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( c.parent_id = '5' ) AND ( b.hos_address LIKE '%浙江%' ) ORDER BY a.doc_R desc  [ RunTime:0.001076s ]
+SQL: SELECT a.*,b.hos_name,c.dep_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( a.depa_id = '5' ) AND ( b.hos_address LIKE '%浙江%' ) ORDER BY a.doc_R desc  [ RunTime:0.000718s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000046s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000122s ]
+
+[ 2017-09-06T11:20:51+08:00 ] 113.81.17.72 /health/management/application/index.php/Connector/Depa/getdepname
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000368s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000038s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000096s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000039s ]
+SQL: SHOW COLUMNS FROM `department_info` [ RunTime:0.001770s ]
+SQL: SELECT * FROM `department_info` WHERE ( `dep_id` = '5' ) LIMIT 1   [ RunTime:0.000244s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000083s ]
+
+[ 2017-09-06T12:17:09+08:00 ] 117.136.40.20 /health/management/Application/index.php/Connector/Doc/getHotDoc
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000460s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000040s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000061s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000134s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000030s ]
+NOTIC: [2048] Declaration of Admin\Model\DoctorInfoModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) C:\phpstudy\WWW\health\management\Application\Admin\Model\DoctorInfoModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.002213s ]
+SQL: SELECT a.*,b.hos_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id ORDER BY doc_R desc LIMIT 8   [ RunTime:0.000878s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000091s ]
+
+[ 2017-09-06T12:17:09+08:00 ] 117.136.40.20 /health/management/Application/index.php/Connector/Hos/getHotHos
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000376s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000041s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000089s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000030s ]
+SQL: SHOW COLUMNS FROM `hospital_info` [ RunTime:0.001703s ]
+SQL: SELECT * FROM `hospital_info` ORDER BY hos_attention desc LIMIT 4   [ RunTime:0.000343s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000084s ]
+
+[ 2017-09-06T14:07:34+08:00 ] 211.139.151.74 /health/management/Application/index.php/Connector/User/getKnowList
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000372s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000030s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000044s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000096s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000035s ]
+SQL: SHOW COLUMNS FROM `health_know` [ RunTime:0.001737s ]
+SQL: SELECT * FROM `health_know` ORDER BY know_see desc  [ RunTime:0.000563s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000087s ]
+
+[ 2017-09-06T14:07:34+08:00 ] 211.139.151.74 /health/management/Application/index.php/Connector/Hos/getHotHos
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000364s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000051s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000102s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000029s ]
+SQL: SHOW COLUMNS FROM `hospital_info` [ RunTime:0.001774s ]
+SQL: SELECT * FROM `hospital_info` ORDER BY hos_attention desc LIMIT 4   [ RunTime:0.000387s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000088s ]
+
+[ 2017-09-06T14:07:34+08:00 ] 211.139.151.74 /health/management/Application/index.php/Connector/Doc/getHotDoc
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000463s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000039s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000044s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000095s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000032s ]
+NOTIC: [2048] Declaration of Admin\Model\DoctorInfoModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) C:\phpstudy\WWW\health\management\Application\Admin\Model\DoctorInfoModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.001954s ]
+SQL: SELECT a.*,b.hos_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id ORDER BY doc_R desc LIMIT 8   [ RunTime:0.000656s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000088s ]
+
+[ 2017-09-06T14:39:09+08:00 ] 211.139.151.74 /health/management/Application/index.php/Connector/User/getKnowList
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000353s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000030s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000091s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000031s ]
+SQL: SHOW COLUMNS FROM `health_know` [ RunTime:0.001788s ]
+SQL: SELECT * FROM `health_know` ORDER BY know_see desc  [ RunTime:0.000588s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000033s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000088s ]
+
+[ 2017-09-06T14:39:10+08:00 ] 211.139.151.74 /health/management/Application/index.php/Connector/Hos/getHotHos
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000362s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000040s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000064s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000142s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000030s ]
+SQL: SHOW COLUMNS FROM `hospital_info` [ RunTime:0.001706s ]
+SQL: SELECT * FROM `hospital_info` ORDER BY hos_attention desc LIMIT 4   [ RunTime:0.000389s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000083s ]
+
+[ 2017-09-06T14:39:10+08:00 ] 211.139.151.74 /health/management/Application/index.php/Connector/Doc/getHotDoc
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000364s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000047s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000098s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+NOTIC: [2048] Declaration of Admin\Model\DoctorInfoModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) C:\phpstudy\WWW\health\management\Application\Admin\Model\DoctorInfoModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.002752s ]
+SQL: SELECT a.*,b.hos_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id ORDER BY doc_R desc LIMIT 8   [ RunTime:0.000824s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000091s ]
+
+[ 2017-09-06T20:39:21+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Doc/getDocDetail?doc_id=null
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000360s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000095s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000030s ]
+NOTIC: [2048] Declaration of Admin\Model\DoctorInfoModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) C:\phpstudy\WWW\health\management\Application\Admin\Model\DoctorInfoModel.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.001894s ]
+SQL: SELECT a.*,b.hos_name,c.dep_name FROM doctor_info a LEFT JOIN hospital_info b on a.hos_id=b.hos_id LEFT JOIN department_info c on a.depa_id=c.dep_id WHERE ( `doc_id` = 'null' ) LIMIT 1   [ RunTime:0.000636s ]
+NOTIC: [8] Undefined index: doc_img C:\phpstudy\WWW\health\management\Application\Connector\Controller\DocController.class.php 第 35 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000032s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000074s ]
+
+[ 2017-09-06T20:39:21+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Zixun/mydoclist
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000354s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000037s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000086s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000038s ]
+SQL: SHOW COLUMNS FROM `my_doc` [ RunTime:0.001599s ]
+NOTIC: [8] Use of undefined constant eq - assumed 'eq' C:\phpstudy\WWW\health\management\Application\Connector\Controller\ZixunController.class.php 第 91 行.
+SQL: SELECT a.*,b.* FROM my_doc a LEFT JOIN user_info b on a.user_phone=b.user_phone WHERE ( a.doc_phone = 'null' )  [ RunTime:0.000569s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000082s ]
+
+[ 2017-09-06T20:39:22+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Inquiry/getInquiry
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000369s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000041s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000090s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000030s ]
+SQL: SHOW COLUMNS FROM `inquiry` [ RunTime:0.001787s ]
+SQL: SELECT a.*,b.* FROM inquiry a LEFT JOIN user_info b on a.user_phone=b.user_phone ORDER BY id desc  [ RunTime:0.002269s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000048s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000101s ]
+
+[ 2017-09-06T20:39:28+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Doc/login
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000358s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000030s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000043s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000097s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000030s ]
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.002191s ]
+SQL: SELECT * FROM `doctor_info` WHERE ( `doc_phone` = '15768650568' ) AND ( `doc_password` = 'e10adc3949ba59abbe56e057f20f883e' ) LIMIT 1   [ RunTime:0.000565s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000051s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000119s ]
+
+[ 2017-09-06T20:39:37+08:00 ] 113.81.17.72 /health/management/Application/index.php/Connector/Doc/login
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000352s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000038s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000092s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000038s ]
+SQL: SHOW COLUMNS FROM `doctor_info` [ RunTime:0.001765s ]
+SQL: SELECT * FROM `doctor_info` WHERE ( `doc_phone` = '15768653949' ) AND ( `doc_password` = 'e10adc3949ba59abbe56e057f20f883e' ) LIMIT 1   [ RunTime:0.000544s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000083s ]
+
