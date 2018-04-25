@@ -6,19 +6,19 @@ define("APP_DEBUG", true);
 
 //define("SITE_URL", "http://172.17.32.90:88");
 //define("SITE_URL", "http://114.115.223.182:80");
-define("SITE_URL", "http://localhost");
+define("SITE_URL", "http://127.0.0.1");
 
 
-define("CSS_URL", "/health/management/Application/Public/Home/css/");
-define("IMAGES_URL", SITE_URL . "/health/management/Application/Public/Home/images/");
-define("JS_URL", SITE_URL . "/health/management/Application/Public/Home/js/");
+define("CSS_URL", "/healthSystem/management/Application/Public/Home/css/");
+define("IMAGES_URL", SITE_URL . "/healthSystem/management/Application/Public/Home/images/");
+define("JS_URL", SITE_URL . "/healthSystem/management/Application/Public/Home/js/");
 
 //定义后台界面CSS，image,js路径
-define("ADMIN_CSS_URL", SITE_URL . "/health/management/Application/Public/Admin/css/");
-define("ADMIN_IMAGES_URL", SITE_URL . "/health/management/Application/Public/Admin/images/");
-define("ADMIN_JS_URL", SITE_URL . "/health/management/Application/Public/Admin/js/");
+define("ADMIN_CSS_URL", SITE_URL . "/healthSystem/management/Application/Public/Admin/css/");
+define("ADMIN_IMAGES_URL", SITE_URL . "/healthSystem/management/Application/Public/Admin/images/");
+define("ADMIN_JS_URL", SITE_URL . "/healthSystem/management/Application/Public/Admin/js/");
 
 //layui文件路径
-define("ADMIN_LAYUI_URL", SITE_URL . "/health/management/Application/Public/layui/");
+define("ADMIN_LAYUI_URL", SITE_URL . "/healthSystem/management/Application/Public/layui/");
 
 require '../ThinkPHP/ThinkPHP.php';

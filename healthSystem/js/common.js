@@ -1,7 +1,7 @@
 
 //document.write('<script language="javascript" src="./vue.min.js"></script>');
 
-var serverName = '139.199.166.127:80';
+var serverName = '192.168.31.236';
 //var serverName = '114.115.223.182:80';
 //var serverName = '10.77.117.237:80';
 //var serverName = '192.168.0.59';

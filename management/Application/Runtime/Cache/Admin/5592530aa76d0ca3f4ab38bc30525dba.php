@@ -1,0 +1,7 @@
+<?php if (!defined('THINK_PATH')) exit();?><html>
+<head></head>
+<body>
+	<?php showImage("推荐热门医生.jpg",875,451); ?>
+	<?php showImage("算法.png",480,691); ?>
+</body>
+</html>
